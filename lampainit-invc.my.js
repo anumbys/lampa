@@ -166,14 +166,6 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
     Lampa.Storage.set('video_quality_default', '2160');
     Lampa.Storage.set('poster_size', 'w500');
 
-Lampa.Storage.set('start_page', 'last');
-
-
-Lampa.Storage.set('menu_sort', JSON.stringify([ "Главная", "Избранное", "История", "Торренты", "Фильмы", "Аниме", "Сериалы"]));
-
-Lampa.Storage.set('menu_hide', JSON.stringify(["Расписание", "Релизы"]));
-
-Lampa.Storage.set('torrents_sort', 'size');
 
 //    var plugins = Lampa.Plugins.get();
 
