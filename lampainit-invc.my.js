@@ -54,8 +54,6 @@ Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.gi
     Lampa.Storage.set('internal_torrclient', 'true');
 //    Lampa.Storage.set('surs_disableCustomName', true);
     Lampa.Storage.set('surs_name', 'MIX');
-  // Lampa.Storage.set('proxy_tmdb', 'true');
-  // etc
 }
 
 
@@ -97,7 +95,7 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
 // Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
     Lampa.Settings.listener.follow('open', function(e) {
-      $(['account', 'iptv', 'tmdb'].map(function(c) {
+      $(['account', 'parser', 'iptv', 'plugins', 'tmdb'].map(function(c) {
         return '[data-component="' + c + '"]';
       }).join(','), e.body).remove();
     });
