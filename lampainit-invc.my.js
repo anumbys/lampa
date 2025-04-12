@@ -3,9 +3,9 @@
 
   // Первоначальная сортировка меню
   if (!localStorage.getItem('menu_sort'))
-    localStorage.setItem('menu_sort', '["Главная","Избранное","Торренты","Фильмы","Сериалы","История","Релизы","Аниме","IPTV","Каталог","Фильтр"]');
+    localStorage.setItem('menu_sort', '["Главная","Избранное","Фильмы","Сериалы","История","Релизы","Аниме","IPTV","Каталог","Фильтр","Расписание","Торренты","Клубничка"]');
 
-//  localStorage.setItem('cub_mirrors', '["mirror-kurwa.men", "cub.rip"]');
+  localStorage.setItem('cub_mirrors', '["mirror-kurwa.men", "cub.rip"]');
 
   window.lampa_settings = {
     torrents_use: true,    // кнопка торренты включена
@@ -14,7 +14,7 @@
     socket_use: false,     // cub
     account_use: true,     // сохраним ради расширенных закладок
     account_sync: false,   // cub синхронизация
-    plugins_store: true,  // cub магазин
+    plugins_store: false,  // cub магазин
     feed: false,           // cub лента
     white_use: false,      // cub
     push_state: false,     // адрес в url /?card=1241982&media=movie
@@ -97,7 +97,7 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
 // Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
     Lampa.Settings.listener.follow('open', function(e) {
-      $(['account', 'iptv', 'tmdb'].map(function(c) {
+      $(['account', 'iptv', 'plugins', 'tmdb'].map(function(c) {
         return '[data-component="' + c + '"]';
       }).join(','), e.body).remove();
     });
@@ -112,36 +112,6 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
         $("[data-action=about]").hide();
         $("[data-action=console]").hide();
         $("[data-action=timetable]").hide();
-      }
-    });
-
-
-    Lampa.Settings.listener.follow('open', function (e) {
-      if (e.name == 'tmdb') { // tmdb
-        e.body.find('[data-name="proxy_tmdb_auto"]').remove();
-        e.body.find('[data-name="proxy_tmdb"]').remove();
-      }
-
-      // Разрешаем пользователю указывать локальный TS в "Дополнительная ссылка"
-      // если хотите скрыть раздел, добавьте на 174й строке 'server' в массив
-//      if (e.name == 'server') {
-//        e.body.find('[data-parent="login"]').remove();
-//        e.body.find('[data-name="torrserver_url"]').remove();
-//        e.body.find('[data-name="torrserver_auth"]').remove();
-//        e.body.find('[data-name="torrserver_savedb"]').remove();
-//        e.body.find('[data-name="torrserver_preload"]').remove();
-//      }
-
-      if (e.name == 'interface') {
-        e.body.find('[data-name="light_version"]').remove();
-        e.body.find('[data-name="card_interfice_type"]').remove();
-        e.body.find('[data-name="card_interfice_reactions"]').remove();
-      }
-
-      if (e.name == 'more') {
-        e.body.find('[data-name="cache_images"]').remove();
-        e.body.find('[data-name="device_name"]').remove();
-        e.body.find('[data-name="export"]').remove();
       }
     });
 
