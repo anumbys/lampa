@@ -92,6 +92,13 @@ Lampa.Storage.set('torrents_sort', 'size');
 //}
 
 
+
+
+    Lampa.Storage.set('lampac_initiale', 'true');
+    Lampa.Storage.set('video_quality_default', '2160');
+    Lampa.Storage.set('poster_size', 'w500');
+
+
 // Выполняется один раз, когда пользователь впервые открывает лампу
 window.lampainit_invc.first_initiale = function firstinitiale() {
    Lampa.Storage.set('source', 'MIX');
@@ -106,7 +113,7 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
   var timer = setInterval(function() {
     if (typeof Lampa !== 'undefined') {
-    
+
       clearInterval(timer);
 
       if (window.lampainit_invc)
@@ -176,9 +183,6 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
   }, 200);
 
   function start() {
-    Lampa.Storage.set('lampac_initiale', 'true');
-    Lampa.Storage.set('video_quality_default', '2160');
-    Lampa.Storage.set('poster_size', 'w500');
 
 
 
