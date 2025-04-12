@@ -37,7 +37,7 @@ Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.gi
 // (, "https://lampame.github.io/main/pubtorr/pubtorr.js "http://bwa.to/rc/889yfnh", "https://bwa.to/r")
 
 
-    // Добовляем плагины по умолчанию, чтобы руками не вписывать. Выше есть и другой вариантю
+    // Добовляем плагины по умолчанию, чтобы руками не вписывать. Выше есть и другой вариантю, no ne vse plagini podgruzhajutsa
 var plugins = Lampa.Plugins.get();
 
 var plugins_add = [
@@ -102,9 +102,7 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
 
 // Ниже код выполняется до загрузки лампы, например можно изменить настройки
-// window.lampa_settings.push_state = false;
-// localStorage.setItem('cub_domain', 'cub.rip');
-// localStorage.setItem('cub_mirrors', '["cub.rip", "mirror-kurwa.men", "lampadev.ru"]');
+ window.lampa_settings.push_state = false;
 
 
   var timer = setInterval(function() {
