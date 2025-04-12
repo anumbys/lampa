@@ -147,6 +147,10 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
     }
   }, 200);
 
+  function startHide() {
+    $('.head .notice--icon').remove(); // колокольчик уведомлений
+  }
+
   function start() {
     Lampa.Storage.set('lampac_initiale', 'true');
     Lampa.Storage.set('video_quality_default', '2160');
