@@ -207,34 +207,7 @@ window.lampainit_invc.appload = function appload() {
 //    Lampa.Storage.set('proxy_tmdb_auto', 'false');
 //    Lampa.Storage.set('proxy_tmdb', 'true');
 
-    Lampa.Settings.listener.follow('open', function (e) {
-      if (e.name == 'tmdb') { // tmdb
-        e.body.find('[data-name="proxy_tmdb_auto"]').remove();
-        e.body.find('[data-name="proxy_tmdb"]').remove();
-      }
 
-      // Разрешаем пользователю указывать локальный TS в "Дополнительная ссылка"
-      // если хотите скрыть раздел, добавьте на 174й строке 'server' в массив
-//      if (e.name == 'server') {
-//        e.body.find('[data-parent="login"]').remove();
-//        e.body.find('[data-name="torrserver_url"]').remove();
-//        e.body.find('[data-name="torrserver_auth"]').remove();
-//        e.body.find('[data-name="torrserver_savedb"]').remove();
-//        e.body.find('[data-name="torrserver_preload"]').remove();
-//      }
-
-      if (e.name == 'interface') {
-        e.body.find('[data-name="light_version"]').remove();
-        e.body.find('[data-name="card_interfice_type"]').remove();
-        e.body.find('[data-name="card_interfice_reactions"]').remove();
-      }
-
-      if (e.name == 'more') {
-        e.body.find('[data-name="cache_images"]').remove();
-        e.body.find('[data-name="device_name"]').remove();
-        e.body.find('[data-name="export"]').remove();
-      }
-    });
   }
 
   // Настройки для авторизованных пользователей - парсер, torrserver, iptv, sync
