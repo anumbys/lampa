@@ -134,7 +134,6 @@ window.lampainit_invc.appload = function appload() {
 
 
   function start() {
-    {pirate_store}
 
 //    // Выполняется один раз, первый запуск лампы (Mne ne nuzhen tak kak ispolzuju ne lampac i etot plagin podrguzitsa tolko posle pervogo zapuska lampy)
     if (!Lampa.Storage.get('lampac_initiale', 'false')) {
