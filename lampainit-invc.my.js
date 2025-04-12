@@ -60,7 +60,7 @@ Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.gi
 Lampa.Storage.set('start_page', 'last');
 
 
-Lampa.Storage.set('menu_sort', JSON.stringify([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "MIX RUS"]));
+Lampa.Storage.set('menu_sort', JSON.stringify([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "MIX"]));
 
 Lampa.Storage.set('menu_hide', JSON.stringify([ "Расписание", "Релизы"]));
 
