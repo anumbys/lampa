@@ -111,6 +111,9 @@ Lampa.Storage.set('torrents_sort', 'size');
       }
     });
 
+  function startHide() {
+    $('.head .notice--icon').remove(); // колокольчик уведомлений
+  }
 
 // Выполняется один раз, когда пользователь впервые открывает лампу
 window.lampainit_invc.first_initiale = function firstinitiale() {
@@ -143,7 +146,7 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
 // Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
     Lampa.Settings.listener.follow('open', function(e) {
-      $(['account', 'iptv', 'tmdb'].map(function(c) {
+      $(['account', 'parser', 'iptv', 'tmdb'].map(function(c) {
         return '[data-component="' + c + '"]';
       }).join(','), e.body).remove();
     });
