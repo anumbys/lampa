@@ -101,10 +101,6 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 }
 
 
-// Ниже код выполняется до загрузки лампы, например можно изменить настройки
- window.lampa_settings.push_state = false;
-
-
   var timer = setInterval(function() {
     if (typeof Lampa !== 'undefined') {
 
