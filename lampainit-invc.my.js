@@ -47,7 +47,7 @@ Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.gi
 // (, "https://lampame.github.io/main/pubtorr/pubtorr.js")
 
     Lampa.Storage.set('parser_use', 'true');
-//    Lampa.Storage.set('jackett_url', 'https://jacred.xyz');
+    Lampa.Storage.set('jackett_url', 'https://jacred.xyz');
 //    Lampa.Storage.set('jackett_key', '1');
     Lampa.Storage.set('parser_torrent_type', 'jackett');
     Lampa.Storage.set('parse_in_search', 'true');
