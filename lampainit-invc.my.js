@@ -43,7 +43,7 @@ window.lampainit_invc = {};
 
 // Лампа готова для использования
 window.lampainit_invc.appload = function appload() {
-Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.github.io/account.js", "https://bylampa.github.io/source.js", "https://bylampa.github.io/backmenu.js", "https://bylampa.github.io/seas_and_eps.js", "http://bwa.to/rc/889yfnh", "https://bwa.to/r", "https://levende.github.io/lampa-plugins/custom-favs.js", "https://levende.github.io/lampa-plugins/lampac-src-filter.js", "https://aviamovie.github.io/surs.js", "https://apxubatop.github.io/lmpPlugs/tvbutton.js", "https://anumbys.github.io/lampa/notextend.js", "https://BDVBurik.github.io/rezkacomment.js", "https://lampame.github.io/main/pubtorr/pubtorr.js"]);
+Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.github.io/account.js", "https://bylampa.github.io/source.js", "https://bylampa.github.io/backmenu.js", "https://bylampa.github.io/seas_and_eps.js", "http://bwa.to/rc/889yfnh", "https://bwa.to/r", "https://levende.github.io/lampa-plugins/custom-favs.js", "https://levende.github.io/lampa-plugins/lampac-src-filter.js", "https://aviamovie.github.io/surs.js", "https://apxubatop.github.io/lmpPlugs/tvbutton.js", "http://193.233.134.21/plugins/notextend", "https://BDVBurik.github.io/rezkacomment.js", "https://lampame.github.io/main/pubtorr/pubtorr.js"]);
 
     Lampa.Storage.set('parser_use', 'true');
 //    Lampa.Storage.set('jackett_url', 'https://jac.maxvol.pro');
@@ -144,7 +144,7 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
         e.body.find('[data-name="export"]').remove();
       }
     });
-    
+
       if (!Lampa.Storage.get('lampac_initiale', 'false')) {
         if (window.appready) {
           if (window.lampainit_invc) window.lampainit_invc.appready();
