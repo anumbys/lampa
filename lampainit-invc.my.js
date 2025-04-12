@@ -134,8 +134,8 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
       if (e.name == 'interface') {
         e.body.find('[data-name="light_version"]').remove();
-//        e.body.find('[data-name="card_interfice_type"]').remove();
-//        e.body.find('[data-name="card_interfice_reactions"]').remove();
+        e.body.find('[data-name="card_interfice_type"]').remove();  // CUB
+//        e.body.find('[data-name="card_interfice_reactions"]').remove();  // CUB
       }
 
       if (e.name == 'more') {
