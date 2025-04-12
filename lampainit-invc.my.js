@@ -93,7 +93,7 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
         Lampa.Storage.set('lampac_unic_id', unic_id);
       }
 
-//      Lampa.Utils.putScriptAsync(["https://lam.maxvol.pro/cubproxy.js", "https://lam.maxvol.pro/privateinit.js?account_email=" + encodeURIComponent(Lampa.Storage.get('account_email', '')) + "&uid=" + encodeURIComponent(Lampa.Storage.get('lampac_unic_id', ''))], function() {});
+      Lampa.Utils.putScriptAsync(["https://lam.maxvol.pro/cubproxy.js", "https://lam.maxvol.pro/privateinit.js?account_email=" + encodeURIComponent(Lampa.Storage.get('account_email', '')) + "&uid=" + encodeURIComponent(Lampa.Storage.get('lampac_unic_id', ''))], function() {});
 
 // Скрыть меню в настройках - Синхронизация, Парсер, TorrServer, IPTV, Расширения, TMDB
     Lampa.Settings.listener.follow('open', function(e) {
