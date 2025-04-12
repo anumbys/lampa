@@ -47,7 +47,7 @@ Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.gi
 // (, "https://lampame.github.io/main/pubtorr/pubtorr.js "http://bwa.to/rc/889yfnh", "https://bwa.to/r")
 
 
-
+    // Добовляем плагины по умолчанию, чтобы руками не вписывать. Выше есть и другой вариантю
 var plugins = Lampa.Plugins.get();
 
 var plugins_add = [
@@ -68,7 +68,7 @@ plugins_add.forEach(function (plugin) {
 });
 
 if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, function () { }, function () { }, true);
-
+    // Добовляем плагины по умолчанию, чтобы руками не вписывать. Выше есть и другой вариантю END
 
 
     Lampa.Storage.set('parser_use', 'true');
@@ -83,12 +83,8 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
 }
 
 Lampa.Storage.set('start_page', 'last');
-
-
-Lampa.Storage.set('menu_sort', JSON.stringify([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы"]));
-
-Lampa.Storage.set('menu_hide', JSON.stringify([ "Расписание", "Релизы", "Релизы"]));
-
+Lampa.Storage.set('menu_sort', JSON.stringify([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));
+Lampa.Storage.set('menu_hide', JSON.stringify([ "Расписание", "Релизы"]));
 Lampa.Storage.set('torrents_sort', 'size');
 //// Лампа полностью загружена, можно работать с интерфейсом   ( ne rabotaet)
 //window.lampainit_invc.appready = function appready() {
@@ -147,16 +143,6 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
     Lampa.Settings.listener.follow('open', function (e) {
 
-      // Разрешаем пользователю указывать локальный TS в "Дополнительная ссылка"
-      // если хотите скрыть раздел, добавьте на 174й строке 'server' в массив
-//      if (e.name == 'server') {
-//        e.body.find('[data-parent="login"]').remove();
-//        e.body.find('[data-name="torrserver_url"]').remove();
-//        e.body.find('[data-name="torrserver_auth"]').remove();
-//        e.body.find('[data-name="torrserver_savedb"]').remove();
-//        e.body.find('[data-name="torrserver_preload"]').remove();
-//      }
-
       if (e.name == 'interface') {
         e.body.find('[data-name="light_version"]').remove();
 //        e.body.find('[data-name="card_interfice_type"]').remove();  // CUB
@@ -192,51 +178,6 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
     Lampa.Storage.set('lampac_initiale', 'true');
 //    Lampa.Storage.set('video_quality_default', '2160');
     Lampa.Storage.set('poster_size', 'w500');
-
-
-
-
-    // Добовляем плагины по умолчанию, чтобы руками не вписывать. Выше есть и другой вариантю
-
-
-
-
-
-
-
-
-
-
-
-//    var plugins = Lampa.Plugins.get();
-
-//    var plugins_add = [{"url": "https://lampame.github.io/main/pubtorr/pubtorr.js","status": 0,"name": "Публичные парсеры","author": "lampac"},{"url": "http://bwa.to/rc/889yfnh","status": 1,"name": "BwaRC Онлайн","author": "lampac"},{"url": "https://bwa.to/r","status": 1,"name": "Radio Record","author": "lampac"},{"url": "https://lam.maxvol.pro/sisi.js","status": 1,"name": "Клубничка","author": "lampac"},{"url": "https://lam.maxvol.pro/startpage.js","status": 1,"name": "Стартовая страница","author": "lampac"}];
-
-//    var plugins_push = []
-
-//    plugins_add.forEach(function(plugin) {
-//      if (!plugins.find(function(a) {
-//          return a.url == plugin.url
-//        })) {
-//        Lampa.Plugins.add(plugin);
-//        Lampa.Plugins.save();
-
-//        plugins_push.push(plugin.url)
-//      }
-//    });
-
-//    if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function() {}, function() {}, function() {}, true);
-
-
-
-
-
-
-
-
-
-
-
 
 
 
