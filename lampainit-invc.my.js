@@ -46,6 +46,31 @@ window.lampainit_invc.appload = function appload() {
 Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.github.io/account.js", "https://bylampa.github.io/source.js", "https://bylampa.github.io/backmenu.js", "https://bylampa.github.io/seas_and_eps.js", "https://levende.github.io/lampa-plugins/custom-favs.js", "https://levende.github.io/lampa-plugins/lampac-src-filter.js", "https://aviamovie.github.io/surs.js", "https://apxubatop.github.io/lmpPlugs/tvbutton.js", "https://anumbys.github.io/lampa/notextend.js", "https://BDVBurik.github.io/rezkacomment.js"], function() {});
 // (, "https://lampame.github.io/main/pubtorr/pubtorr.js "http://bwa.to/rc/889yfnh", "https://bwa.to/r")
 
+
+
+var plugins = Lampa.Plugins.get();
+
+var plugins_add = [
+{"url": "https://lampame.github.io/main/pubtorr/pubtorr.js","status": 0,"name": "Публичные парсеры","author": "lampac"},{"url": "http://bwa.to/rc/889yfnh","status": 1,"name": "BwaRC Онлайн","author": "lampac"},{"url": "https://bwa.to/r","status": 1,"name": "Radio Record","author": "lampac"},{"url": "https://lam.maxvol.pro/sisi.js","status": 1,"name": "Клубничка","author": "lampac"},{"url": "https://lam.maxvol.pro/startpage.js","status": 1,"name": "Стартовая страница","author": "lampac"}
+];
+
+var plugins_push = []
+
+plugins_add.forEach(function (plugin) {
+    if (!plugins.find(function (a) {
+        return a.url == plugin.url
+    })) {
+        Lampa.Plugins.add(plugin);
+        Lampa.Plugins.save();
+
+        plugins_push.push(plugin.url)
+    }
+});
+
+if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, function () { }, function () { }, true);
+
+
+
     Lampa.Storage.set('parser_use', 'true');
     Lampa.Storage.set('jackett_url', 'https://jacred.xyz');
 //    Lampa.Storage.set('jackett_key', '1');
@@ -60,11 +85,10 @@ Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.gi
 Lampa.Storage.set('start_page', 'last');
 
 
-Lampa.Storage.set('menu_sort', JSON.stringify([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "MIX RUS"]));
+Lampa.Storage.set('menu_sort', JSON.stringify([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы"]));
 
-Lampa.Storage.set('menu_hide', JSON.stringify([ "Расписание", "Релизы", "MIX"]));
+Lampa.Storage.set('menu_hide', JSON.stringify([ "Расписание", "Релизы", "Релизы"]));
 
-Lampa.Storage.set('surs_buttons', '7');
 Lampa.Storage.set('torrents_sort', 'size');
 //// Лампа полностью загружена, можно работать с интерфейсом   ( ne rabotaet)
 //window.lampainit_invc.appready = function appready() {
@@ -173,26 +197,7 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
     
     
     // Добовляем плагины по умолчанию, чтобы руками не вписывать. Выше есть и другой вариантю
-var plugins = Lampa.Plugins.get();
 
-var plugins_add = [
-{"url": "https://lampame.github.io/main/pubtorr/pubtorr.js","status": 0,"name": "Публичные парсеры","author": "lampac"},{"url": "http://bwa.to/rc/889yfnh","status": 1,"name": "BwaRC Онлайн","author": "lampac"},{"url": "https://bwa.to/r","status": 1,"name": "Radio Record","author": "lampac"},{"url": "https://lam.maxvol.pro/sisi.js","status": 1,"name": "Клубничка","author": "lampac"},{"url": "https://lam.maxvol.pro/startpage.js","status": 1,"name": "Стартовая страница","author": "lampac"}
-];
-
-var plugins_push = []
-
-plugins_add.forEach(function (plugin) {
-    if (!plugins.find(function (a) {
-        return a.url == plugin.url
-    })) {
-        Lampa.Plugins.add(plugin);
-        Lampa.Plugins.save();
-
-        plugins_push.push(plugin.url)
-    }
-});
-
-if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, function () { }, function () { }, true);
     
     
     
