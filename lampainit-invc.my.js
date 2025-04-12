@@ -115,9 +115,7 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
       }
     });
 
-  function startHide() {
-    $('.head .notice--icon').remove(); // колокольчик уведомлений
-  }
+
     Lampa.Settings.listener.follow('open', function (e) {
       if (e.name == 'tmdb') { // tmdb
         e.body.find('[data-name="proxy_tmdb_auto"]').remove();
