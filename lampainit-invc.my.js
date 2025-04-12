@@ -5,8 +5,6 @@
 //  if (!localStorage.getItem('menu_sort'))
 //    localStorage.setItem('menu_sort', '["Главная","Избранное","Торренты","Фильмы","Сериалы","История","Релизы","Аниме","IPTV","Каталог","Фильтр"]');
 
-//  localStorage.setItem('cub_mirrors', '["mirror-kurwa.men", "cub.rip"]');
-
   window.lampa_settings = {
     torrents_use: true,    // кнопка торренты включена
     demo: false,           // demo off
@@ -33,10 +31,7 @@
     persons: true        // off
   }
 
-  // //////////////
-// Переименуйте файл lampainit-invc.js в lampainit-invc.my.js
-// //////////////
-
+window.lampainit_invc = {};
 
 // Лампа готова для использования
 window.lampainit_invc.appload = function appload() {
@@ -81,7 +76,7 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
 
 Lampa.Storage.set('start_page', 'last');
 Lampa.Storage.set('menu_sort', JSON.stringify([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));
-Lampa.Storage.set('menu_hide', JSON.stringify([ "Расписание", "Релизы"]));
+Lampa.Storage.set('menu_hide',([ "Расписание", "Релизы"]));
 Lampa.Storage.set('torrents_sort', 'size');
 //// Лампа полностью загружена, можно работать с интерфейсом
 
