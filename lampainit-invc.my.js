@@ -146,7 +146,7 @@ window.lampainit_invc.appload = function appload() {
 //      Lampa.Storage.set('protocol', 'http');                 // cub api протокол http/https
 
       Lampa.Storage.set('poster_size', 'w500');                             // Разрешение постеров TMDB - среднее (w500 - Vysokoe)
-//    }
+    }
 
     // Закрепить кнопку онлайн первой
 //    Lampa.Storage.set('full_btn_priority', '{full_btn_priority_hash}');
