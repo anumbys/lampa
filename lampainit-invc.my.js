@@ -64,7 +64,7 @@ Lampa.Storage.set('menu_sort', JSON.stringify([ "Главная", "Избран�
 
 Lampa.Storage.set('menu_hide', JSON.stringify([ "Расписание", "Релизы"]));
 
-Lampa.Storage.set('surs_buttons', '7');
+Lampa.Storage.set('surs_buttons', '4');
 Lampa.Storage.set('torrents_sort', 'size');
 //// Лампа полностью загружена, можно работать с интерфейсом   ( ne rabotaet)
 //window.lampainit_invc.appready = function appready() {
@@ -74,7 +74,7 @@ Lampa.Storage.set('torrents_sort', 'size');
 
 // Выполняется один раз, когда пользователь впервые открывает лампу
 window.lampainit_invc.first_initiale = function firstinitiale() {
-   Lampa.Storage.set('source', 'CUB');
+   Lampa.Storage.set('source', 'MIX');
 }
 
 
