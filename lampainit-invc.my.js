@@ -38,7 +38,11 @@
 // //////////////
 
 
-window.lampainit_invc = {};
+
+  function startHide() {
+    $('.head .notice--icon').remove(); // колокольчик уведомлений
+  }
+
 
 
 // Лампа готова для использования
@@ -110,10 +114,6 @@ Lampa.Storage.set('torrents_sort', 'size');
         $("[data-action=timetable]").hide();
       }
     });
-
-  function startHide() {
-    $('.head .notice--icon').remove(); // колокольчик уведомлений
-  }
 
 // Выполняется один раз, когда пользователь впервые открывает лампу
 window.lampainit_invc.first_initiale = function firstinitiale() {
