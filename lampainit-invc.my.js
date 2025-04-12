@@ -95,8 +95,21 @@ Lampa.Storage.set('torrents_sort', 'size');
 
 
     Lampa.Storage.set('lampac_initiale', 'true');
-    Lampa.Storage.set('video_quality_default', '2160');
+//    Lampa.Storage.set('video_quality_default', '2160');
     Lampa.Storage.set('poster_size', 'w500');
+
+    // Скрыть разделы в меню
+    Lampa.Listener.follow('app', function(e) {
+      if (e.type === 'ready') {
+        $("[data-action=feed]").hide();        // лента
+        $("[data-action=myperson]").hide();    // cub подписка на актеров
+        $("[data-action=subscribes]").hide();  // cub подписки
+//        $("[data-action=mytorrents]").hide();
+        $("[data-action=about]").hide();
+        $("[data-action=console]").hide();
+        $("[data-action=timetable]").hide();
+      }
+    });
 
 
 // Выполняется один раз, когда пользователь впервые открывает лампу
@@ -182,17 +195,5 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
     }
   }, 200);
 
-  function start() {
 
-
-
-//    if (window.lampainit_invc)
-//      window.lampainit_invc.first_initiale();
-
-    /*
-    setTimeout(function(){
-        Lampa.Noty.show('Плагины установлены, перезагрузка через 5 секунд.',{time: 5000})
-    },5000)
-    */
-  }
 })();
