@@ -59,10 +59,6 @@ Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.gi
 }
 
 
-// Лампа полностью загружена, можно работать с интерфейсом
-window.lampainit_invc.appready = function appready() {
-$('.head .notice--icon').remove();
-}
 
 
 // Выполняется один раз, когда пользователь впервые открывает лампу
@@ -115,6 +111,10 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
       }
     });
 
+// Лампа полностью загружена, можно работать с интерфейсом
+window.lampainit_invc.appready = function appready() {
+$('.head .notice--icon').remove();
+}
 
     Lampa.Settings.listener.follow('open', function (e) {
 //      if (e.name == 'tmdb') { // tmdb
