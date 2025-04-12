@@ -3,9 +3,9 @@
 
   // Первоначальная сортировка меню
   if (!localStorage.getItem('menu_sort'))
-    localStorage.setItem('menu_sort', '["Главная","Избранное","Фильмы","Сериалы","История","Релизы","Аниме","IPTV","Каталог","Фильтр","Расписание","Торренты","Клубничка"]');
+    localStorage.setItem('menu_sort', '["Главная","Избранное","Торренты","Фильмы","Сериалы","История","Релизы","Аниме","IPTV","Каталог","Фильтр"]');
 
-  localStorage.setItem('cub_mirrors', '["mirror-kurwa.men", "cub.rip"]');
+//  localStorage.setItem('cub_mirrors', '["mirror-kurwa.men", "cub.rip"]');
 
   window.lampa_settings = {
     torrents_use: true,    // кнопка торренты включена
@@ -14,7 +14,7 @@
     socket_use: false,     // cub
     account_use: true,     // сохраним ради расширенных закладок
     account_sync: false,   // cub синхронизация
-    plugins_store: false,  // cub магазин
+    plugins_store: true,  // cub магазин
     feed: false,           // cub лента
     white_use: false,      // cub
     push_state: false,     // адрес в url /?card=1241982&media=movie
@@ -97,7 +97,7 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
 // Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
     Lampa.Settings.listener.follow('open', function(e) {
-      $(['account', 'iptv', 'plugins', 'tmdb'].map(function(c) {
+      $(['account', 'iptv', 'tmdb'].map(function(c) {
         return '[data-component="' + c + '"]';
       }).join(','), e.body).remove();
     });
