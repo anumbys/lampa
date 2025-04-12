@@ -161,7 +161,7 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
   function start() {
     Lampa.Storage.set('lampac_initiale', 'true');
-    Lampa.Storage.set('video_quality_default', '2160');
+//    Lampa.Storage.set('video_quality_default', '2160');
     Lampa.Storage.set('poster_size', 'w500');
 
 //    var plugins = Lampa.Plugins.get();
