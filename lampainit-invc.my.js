@@ -86,14 +86,11 @@ Lampa.Storage.set('start_page', 'last');
 Lampa.Storage.set('menu_sort', JSON.stringify([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));
 Lampa.Storage.set('menu_hide', JSON.stringify([ "Расписание", "Релизы"]));
 Lampa.Storage.set('torrents_sort', 'size');
-//// Лампа полностью загружена, можно работать с интерфейсом   ( ne rabotaet)
-//window.lampainit_invc.appready = function appready() {
-//$('.head .notice--icon').remove();
-//}
+//// Лампа полностью загружена, можно работать с интерфейсом
 
-window.lampainit_invc.appready = function appready() {
-$('.head .notice--icon').remove();
-}
+  function startHide() {
+    $('.head .notice--icon').remove(); // колокольчик уведомлений
+  }
 
 
     Lampa.Storage.set('lampac_initiale', 'true');
