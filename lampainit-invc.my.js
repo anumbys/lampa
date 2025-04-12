@@ -3,7 +3,7 @@
 
   // Первоначальная сортировка меню
   if (!localStorage.getItem('menu_sort'))
-    localStorage.setItem('menu_sort', '["Главная","Избранное","Фильмы","Сериалы","История","Релизы","Аниме","IPTV","Каталог","Фильтр","Торренты""]');
+    localStorage.setItem('menu_sort', '["Главная","Избранное","Фильмы","Сериалы","История","Релизы","Аниме","IPTV","Каталог","Фильтр","Торренты"]');
 
 //  localStorage.setItem('cub_mirrors', '["mirror-kurwa.men", "cub.rip"]');
 
