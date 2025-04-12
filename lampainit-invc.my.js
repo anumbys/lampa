@@ -14,7 +14,7 @@
     socket_use: false,     // cub
     account_use: true,     // сохраним ради расширенных закладок
     account_sync: false,   // cub синхронизация
-    plugins_store: true,  // cub магазин
+    plugins_store: false,,  // cub магазин
     feed: false,           // cub лента
     white_use: false,      // cub
     push_state: false,     // адрес в url /?card=1241982&media=movie
