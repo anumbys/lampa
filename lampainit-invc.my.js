@@ -14,7 +14,7 @@
     socket_use: false,     // cub
     account_use: true,     // сохраним ради расширенных закладок
     account_sync: false,   // cub синхронизация
-    plugins_store: false,  // cub магазин
+    plugins_store: true,  // cub магазин
     feed: false,           // cub лента
     white_use: false,      // cub
     push_state: false,     // адрес в url /?card=1241982&media=movie
@@ -60,9 +60,9 @@ Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.gi
 
 
 //// Лампа полностью загружена, можно работать с интерфейсом   ( ne rabotaet)
-//window.lampainit_invc.appready = function appready() {
-//$('.head .notice--icon').remove();
-//}
+window.lampainit_invc.appready = function appready() {
+$('.head .notice--icon').remove();
+}
 
 
 // Выполняется один раз, когда пользователь впервые открывает лампу
