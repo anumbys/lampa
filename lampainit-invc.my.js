@@ -169,9 +169,9 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 Lampa.Storage.set('start_page', 'last');
 
 
-Lampa.Storage.set('menu_sort', JSON.stringify([ "Главная","Запас кофе", "Избранное", "История", "Фильмы", "Сериалы", "Мультфильмы", "Подборки"]));
+Lampa.Storage.set('menu_sort', JSON.stringify([ "Главная", "Избранное", "История", "Торренты", "Фильмы", "Аниме", "Сериалы"]));
 
-Lampa.Storage.set('menu_hide', JSON.stringify(["Персоны", "Аниме", "Лента", "Торренты", "Расписание", "Релизы", "Подписки",]));
+Lampa.Storage.set('menu_hide', JSON.stringify(["Расписание", "Релизы"]));
 
 Lampa.Storage.set('torrents_sort', 'size');
 
