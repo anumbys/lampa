@@ -224,9 +224,9 @@ window.lampainit_invc.appload = function appload() {
 //      }
 
       if (e.name == 'interface') {
-//        e.body.find('[data-name="light_version"]').remove();
-        e.body.find('[data-name="card_interfice_type"]').remove();
-        e.body.find('[data-name="card_interfice_reactions"]').remove();
+        e.body.find('[data-name="light_version"]').remove();
+//        e.body.find('[data-name="card_interfice_type"]').remove();
+//        e.body.find('[data-name="card_interfice_reactions"]').remove();
       }
 
       if (e.name == 'more') {
