@@ -11,16 +11,17 @@
   if (!localStorage.getItem('menu_sort'))
     localStorage.setItem('menu_sort', '["Главная","Фильмы","Сериалы","Релизы","Аниме","Избранное","IPTV","История","Каталог","Фильтр","Расписание","Торренты","Клубничка"]');
 
-
+/* Если отключен cub proxy в init.conf
+  if ('{country}' == 'RU')
+    localStorage.setItem('cub_domain', 'mirror-kurwa.men');
+  else
+    localStorage.setItem('cub_domain', 'cub.red');
+*/
 
   // Дополнительные зеркала cub
 //  localStorage.setItem('cub_mirrors', '["mirror-kurwa.men", "cub.rip"]');
 
-window.lampainit_invc.appload = function appload() {
-  // так добавится всем, но без возможности отключить (в плагинах отображаться не будет)
-              Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.github.io/account.js", "https://bylampa.github.io/source.js", "https://bylampa.github.io/backmenu.js", "https://bylampa.github.io/seas_and_eps.js", "http://bwa.to/rc/889yfnh", "https://bwa.to/r", "https://levende.github.io/lampa-plugins/custom-favs.js", "https://levende.github.io/lampa-plugins/lampac-src-filter.js", "https://aviamovie.github.io/surs.js", "https://apxubatop.github.io/lmpPlugs/tvbutton.js", "https://anumbys.github.io/lampa/notextend.js", "https://BDVBurik.github.io/rezkacomment.js", "https://lampame.github.io/main/pubtorr/pubtorr.js"], function() {});
-  // etc
-};
+
 
   window.lampa_settings = {
     torrents_use: true,    // кнопка торренты включена
@@ -129,7 +130,6 @@ window.lampainit_invc.appload = function appload() {
 
 
   function start() {
-    {pirate_store}
 
 //    // Выполняется один раз, первый запуск лампы (Mne ne nuzhen tak kak ispolzuju ne lampac i etot plagin podrguzitsa tolko posle pervogo zapuska lampy)
     if (!Lampa.Storage.get('lampac_initiale', 'false')) {
