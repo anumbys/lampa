@@ -7,19 +7,7 @@
 //    localStorage.setItem('tmdb_lang', 'ru');
 //  }
 
-//  // Первоначальная сортировка меню
-  if (!localStorage.getItem('menu_sort'))
-    localStorage.setItem('menu_sort'Lampa.Utils.putScriptAsync, '["Главная","Фильмы","Сериалы","Релизы","Аниме","Избранное","IPTV","История","Каталог","Фильтр","Расписание","Торренты","Клубничка"]');
 
-/* Если отключен cub proxy в init.conf
-  if ('{country}' == 'RU')
-    localStorage.setItem('cub_domain', 'mirror-kurwa.men');
-  else
-    localStorage.setItem('cub_domain', 'cub.red');
-*/
-
-  // Дополнительные зеркала cub
-//  localStorage.setItem('cub_mirrors', '["mirror-kurwa.men", "cub.rip"]');
 
 window.lampainit_invc.appload = function appload() {
   // так добавится всем, но без возможности отключить (в плагинах отображаться не будет)
