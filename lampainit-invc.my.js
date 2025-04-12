@@ -43,8 +43,8 @@ window.lampainit_invc = {};
 
 // Лампа готова для использования
 window.lampainit_invc.appload = function appload() {
-Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.github.io/account.js", "https://bylampa.github.io/source.js", "https://bylampa.github.io/backmenu.js", "https://bylampa.github.io/seas_and_eps.js", "http://bwa.to/rc/889yfnh", "https://bwa.to/r", "https://levende.github.io/lampa-plugins/custom-favs.js", "https://levende.github.io/lampa-plugins/lampac-src-filter.js", "https://aviamovie.github.io/surs.js", "https://apxubatop.github.io/lmpPlugs/tvbutton.js", "https://anumbys.github.io/lampa/notextend.js", "https://BDVBurik.github.io/rezkacomment.js"]);
-// (, "https://lampame.github.io/main/pubtorr/pubtorr.js")
+Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.github.io/account.js", "https://bylampa.github.io/source.js", "https://bylampa.github.io/backmenu.js", "https://bylampa.github.io/seas_and_eps.js", "https://levende.github.io/lampa-plugins/custom-favs.js", "https://levende.github.io/lampa-plugins/lampac-src-filter.js", "https://aviamovie.github.io/surs.js", "https://apxubatop.github.io/lmpPlugs/tvbutton.js", "https://anumbys.github.io/lampa/notextend.js", "https://BDVBurik.github.io/rezkacomment.js"]);
+// (, "https://lampame.github.io/main/pubtorr/pubtorr.js "http://bwa.to/rc/889yfnh", "https://bwa.to/r"")
 
     Lampa.Storage.set('parser_use', 'true');
     Lampa.Storage.set('jackett_url', 'https://jacred.xyz');
@@ -52,11 +52,9 @@ Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.gi
     Lampa.Storage.set('parser_torrent_type', 'jackett');
     Lampa.Storage.set('parse_in_search', 'true');
 //    Lampa.Storage.set('torrserver_url','https://ts.maxvol.pro'),
-    Lampa.Storage.set('internal_torrclient', 'true');
+    Lampa.Storage.set('internal_torrclient', 'true'); // включенный встроенный клиент торсервера
 //    Lampa.Storage.set('surs_disableCustomName', true);
     Lampa.Storage.set('surs_name', 'MIX');
-  // Lampa.Storage.set('proxy_tmdb', 'true');
-  // etc
 }
 
 Lampa.Storage.set('start_page', 'last');
@@ -65,7 +63,7 @@ Lampa.Storage.set('start_page', 'last');
 Lampa.Storage.set('menu_sort', JSON.stringify([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы"]));
 
 Lampa.Storage.set('menu_hide', JSON.stringify([ "Расписание", "Релизы"]));
-
+Lampa.Storage.set('surs_buttons', '7');
 Lampa.Storage.set('torrents_sort', 'size');
 //// Лампа полностью загружена, можно работать с интерфейсом   ( ne rabotaet)
 //window.lampainit_invc.appready = function appready() {
@@ -100,8 +98,6 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
         unic_id = Lampa.Utils.uid(8).toLowerCase();
         Lampa.Storage.set('lampac_unic_id', unic_id);
       }
-
-//      Lampa.Utils.putScriptAsync(["https://lam.maxvol.pro/cubproxy.js", "https://lam.maxvol.pro/privateinit.js?account_email=" + encodeURIComponent(Lampa.Storage.get('account_email', '')) + "&uid=" + encodeURIComponent(Lampa.Storage.get('lampac_unic_id', ''))], function() {});
 
 // Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
     Lampa.Settings.listener.follow('open', function(e) {
@@ -174,7 +170,10 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
 //    var plugins = Lampa.Plugins.get();
 
-//    var plugins_add = [{"url": "https://lam.maxvol.pro/tracks.js","status": 1,"name": "Tracks.js","author": "lampac"},{"url": "https://lam.maxvol.pro/tmdbproxy.js","status": 1,"name": "TMDB Proxy","author": "lampac"},{"url": "https://lam.maxvol.pro/online.js","status": 1,"name": "Онлайн","author": "lampac"},{"url": "https://lam.maxvol.pro/sisi.js","status": 1,"name": "Клубничка","author": "lampac"},{"url": "https://lam.maxvol.pro/startpage.js","status": 1,"name": "Стартовая страница","author": "lampac"},{"url": "https://lam.maxvol.pro/sync.js","status": 1,"name": "Синхронизация","author": "lampac"},{"url": "https://lam.maxvol.pro/backup.js","status": 1,"name": "Backup","author": "lampac"}];
+//    var plugins_add = [{"url": "https://lampame.github.io/main/pubtorr/pubtorr.js","status": 0,"name": "Публичные парсеры
+","author": "lampac"},{"url": "http://bwa.to/rc/889yfnh","status": 1,"name": "BwaRC Онлайн
+","author": "lampac"},{"url": "https://bwa.to/r","status": 1,"name": "Radio Record
+","author": "lampac"},{"url": "https://lam.maxvol.pro/sisi.js","status": 1,"name": "Клубничка","author": "lampac"},{"url": "https://lam.maxvol.pro/startpage.js","status": 1,"name": "Стартовая страница","author": "lampac"},{"url": "https://lam.maxvol.pro/sync.js","status": 1,"name": "Синхронизация","author": "lampac"},{"url": "https://lam.maxvol.pro/backup.js","status": 1,"name": "Backup","author": "lampac"}];
 
 //    var plugins_push = []
 
