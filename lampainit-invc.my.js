@@ -38,11 +38,7 @@
 // //////////////
 
 
-
-  function startHide() {
-    $('.head .notice--icon').remove(); // колокольчик уведомлений
-  }
-
+window.lampainit_invc = {};
 
 
 // Лампа готова для использования
@@ -95,7 +91,9 @@ Lampa.Storage.set('torrents_sort', 'size');
 //$('.head .notice--icon').remove();
 //}
 
-
+window.lampainit_invc.appready = function appready() {
+$('.head .notice--icon').remove();
+}
 
 
     Lampa.Storage.set('lampac_initiale', 'true');
