@@ -11,12 +11,7 @@
   if (!localStorage.getItem('menu_sort'))
     localStorage.setItem('menu_sort', '["Главная","Фильмы","Сериалы","Релизы","Аниме","Избранное","IPTV","История","Каталог","Фильтр","Расписание","Торренты","Клубничка"]');
 
-/* Если отключен cub proxy в init.conf
-  if ('{country}' == 'RU')
-    localStorage.setItem('cub_domain', 'mirror-kurwa.men');
-  else
-    localStorage.setItem('cub_domain', 'cub.red');
-*/
+
 
   // Дополнительные зеркала cub
 //  localStorage.setItem('cub_mirrors', '["mirror-kurwa.men", "cub.rip"]');
