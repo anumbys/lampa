@@ -115,7 +115,9 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
       }
     });
 
-
+  function startHide() {
+    $('.head .notice--icon').remove(); // колокольчик уведомлений
+  }
     Lampa.Settings.listener.follow('open', function (e) {
       if (e.name == 'tmdb') { // tmdb
         e.body.find('[data-name="proxy_tmdb_auto"]').remove();
@@ -168,9 +170,7 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
     Lampa.Storage.set('video_quality_default', '2160');
 //    Lampa.Storage.set('proxy_tmdb_auto', 'LT' == 'RU');
     Lampa.Storage.set('poster_size', 'w500');
-window.lampainit_invc.appready = function appready() {
-$('.head .notice--icon').remove();
-}
+
 //    var plugins = Lampa.Plugins.get();
 
 //    var plugins_add = [{"url": "https://lam.maxvol.pro/tracks.js","status": 1,"name": "Tracks.js","author": "lampac"},{"url": "https://lam.maxvol.pro/tmdbproxy.js","status": 1,"name": "TMDB Proxy","author": "lampac"},{"url": "https://lam.maxvol.pro/online.js","status": 1,"name": "Онлайн","author": "lampac"},{"url": "https://lam.maxvol.pro/sisi.js","status": 1,"name": "Клубничка","author": "lampac"},{"url": "https://lam.maxvol.pro/startpage.js","status": 1,"name": "Стартовая страница","author": "lampac"},{"url": "https://lam.maxvol.pro/sync.js","status": 1,"name": "Синхронизация","author": "lampac"},{"url": "https://lam.maxvol.pro/backup.js","status": 1,"name": "Backup","author": "lampac"}];
