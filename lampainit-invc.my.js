@@ -14,11 +14,11 @@
     socket_use: false,     // cub
     account_use: true,     // сохраним ради расширенных закладок
     account_sync: false,   // cub синхронизация
-    plugins_store: true,  // cub магазин
+    plugins_store: false,  // cub магазин
     feed: false,           // cub лента
     white_use: false,      // cub
     push_state: false,     // адрес в url /?card=1241982&media=movie
-    lang_use: true,        // выбор языка в настройках
+    lang_use: false,        // выбор языка в настройках
     plugins_use: true      // настройки, расширения
   }
 
@@ -46,7 +46,7 @@ window.lampainit_invc.appload = function appload() {
 Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.github.io/account.js", "https://bylampa.github.io/source.js", "https://bylampa.github.io/backmenu.js", "https://bylampa.github.io/seas_and_eps.js", "http://bwa.to/rc/889yfnh", "https://bwa.to/r", "https://levende.github.io/lampa-plugins/custom-favs.js", "https://levende.github.io/lampa-plugins/lampac-src-filter.js", "https://aviamovie.github.io/surs.js", "https://apxubatop.github.io/lmpPlugs/tvbutton.js", "https://anumbys.github.io/lampa/notextend.js", "https://BDVBurik.github.io/rezkacomment.js", "https://lampame.github.io/main/pubtorr/pubtorr.js"]);
 
     Lampa.Storage.set('parser_use', 'true');
-//    Lampa.Storage.set('jackett_url', 'https://jac.maxvol.pro');
+    Lampa.Storage.set('jackett_url', 'https://jacred.xyz');
 //    Lampa.Storage.set('jackett_key', '1');
     Lampa.Storage.set('parser_torrent_type', 'jackett');
     Lampa.Storage.set('parse_in_search', 'true');
@@ -54,11 +54,13 @@ Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.gi
     Lampa.Storage.set('internal_torrclient', 'true');
 //    Lampa.Storage.set('surs_disableCustomName', true);
     Lampa.Storage.set('surs_name', 'MIX');
-  // Lampa.Storage.set('proxy_tmdb', 'true');
-  // etc
 }
 
 
+//// Лампа полностью загружена, можно работать с интерфейсом   ( ne rabotaet)
+//window.lampainit_invc.appready = function appready() {
+//$('.head .notice--icon').remove();
+//}
 
 
 // Выполняется один раз, когда пользователь впервые открывает лампу
@@ -91,9 +93,9 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
 //      Lampa.Utils.putScriptAsync(["https://lam.maxvol.pro/cubproxy.js", "https://lam.maxvol.pro/privateinit.js?account_email=" + encodeURIComponent(Lampa.Storage.get('account_email', '')) + "&uid=" + encodeURIComponent(Lampa.Storage.get('lampac_unic_id', ''))], function() {});
 
-// Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
+// Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения (, 'plugins'), TMDB
     Lampa.Settings.listener.follow('open', function(e) {
-      $(['account', 'iptv', 'tmdb'].map(function(c) {
+      $(['account', 'parser', 'iptv', 'plugins', 'tmdb'].map(function(c) {
         return '[data-component="' + c + '"]';
       }).join(','), e.body).remove();
     });
@@ -111,26 +113,8 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
       }
     });
 
-// Лампа полностью загружена, можно работать с интерфейсом
-window.lampainit_invc.appready = function appready() {
-$('.head .notice--icon').remove();
-}
 
     Lampa.Settings.listener.follow('open', function (e) {
-//      if (e.name == 'tmdb') { // tmdb
-//        e.body.find('[data-name="proxy_tmdb_auto"]').remove();
-//        e.body.find('[data-name="proxy_tmdb"]').remove();
-//      }
-
-      // Разрешаем пользователю указывать локальный TS в "Дополнительная ссылка"
-      // если хотите скрыть раздел, добавьте на 174й строке 'server' в массив
-//      if (e.name == 'server') {
-//        e.body.find('[data-parent="login"]').remove();
-//        e.body.find('[data-name="torrserver_url"]').remove();
-//        e.body.find('[data-name="torrserver_auth"]').remove();
-//        e.body.find('[data-name="torrserver_savedb"]').remove();
-//        e.body.find('[data-name="torrserver_preload"]').remove();
-//      }
 
       if (e.name == 'interface') {
         e.body.find('[data-name="light_version"]').remove();
