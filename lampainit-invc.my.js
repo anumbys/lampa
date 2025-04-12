@@ -106,7 +106,20 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
   var timer = setInterval(function() {
     if (typeof Lampa !== 'undefined') {
+    
+      clearInterval(timer);
 
+      if (window.lampainit_invc)
+        window.lampainit_invc.appload();
+
+      if (false)
+        Lampa.Storage.set('full_btn_priority', '966825172');
+
+      var unic_id = Lampa.Storage.get('lampac_unic_id', '');
+      if (!unic_id) {
+        unic_id = Lampa.Utils.uid(8).toLowerCase();
+        Lampa.Storage.set('lampac_unic_id', unic_id);
+      }
 
 // Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
     Lampa.Settings.listener.follow('open', function(e) {
