@@ -103,12 +103,12 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
     });
 
     // Скрыть разделы в меню
-    Lampa.Listener.follow('app', (e) => {
+    Lampa.Listener.follow('app', function(e) {
       if (e.type === 'ready') {
         $("[data-action=feed]").hide();        // лента
         $("[data-action=myperson]").hide();    // cub подписка на актеров
-        $("[data-action=subscribes]").hide();
-        $("[data-action=mytorrents]").hide();
+        $("[data-action=subscribes]").hide();  // cub подписки
+//        $("[data-action=mytorrents]").hide();
         $("[data-action=about]").hide();
         $("[data-action=console]").hide();
         $("[data-action=timetable]").hide();
