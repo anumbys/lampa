@@ -117,10 +117,10 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
 
     Lampa.Settings.listener.follow('open', function (e) {
-      if (e.name == 'tmdb') { // tmdb
-        e.body.find('[data-name="proxy_tmdb_auto"]').remove();
-        e.body.find('[data-name="proxy_tmdb"]').remove();
-      }
+//      if (e.name == 'tmdb') { // tmdb
+//        e.body.find('[data-name="proxy_tmdb_auto"]').remove();
+//        e.body.find('[data-name="proxy_tmdb"]').remove();
+//      }
 
       // Разрешаем пользователю указывать локальный TS в "Дополнительная ссылка"
       // если хотите скрыть раздел, добавьте на 174й строке 'server' в массив
@@ -144,6 +144,7 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
         e.body.find('[data-name="export"]').remove();
       }
     });
+
       if (!Lampa.Storage.get('lampac_initiale', 'false')) {
         if (window.appready) {
           if (window.lampainit_invc) window.lampainit_invc.appready();
