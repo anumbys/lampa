@@ -2,8 +2,6 @@
   'use strict';
 
   // Первоначальная сортировка меню
-//  if (!localStorage.getItem('menu_sort'))
-//    localStorage.setItem('menu_sort', '["Главная","Избранное","Торренты","Фильмы","Сериалы","История","Релизы","Аниме","IPTV","Каталог","Фильтр"]');
 
   window.lampa_settings = {
     torrents_use: true,    // кнопка торренты включена
@@ -75,8 +73,8 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
 }
 
 Lampa.Storage.set('start_page', 'last');
-Lampa.Storage.set('menu_sort', JSON.stringify([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));
-Lampa.Storage.set('menu_hide',([ "Расписание", "Релизы"]));
+Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));
+Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
 Lampa.Storage.set('torrents_sort', 'size');
 //// Лампа полностью загружена, можно работать с интерфейсом
 
