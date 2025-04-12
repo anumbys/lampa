@@ -77,61 +77,61 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 // localStorage.setItem('cub_mirrors', '["cub.rip", "mirror-kurwa.men", "lampadev.ru"]');
 
 
-//  var timer = setInterval(function() {
-//    if (typeof Lampa !== 'undefined') {
-//      clearInterval(timer);
+  var timer = setInterval(function() {
+    if (typeof Lampa !== 'undefined') {
+      clearInterval(timer);
 
-//      if (window.lampainit_invc)
-//        window.lampainit_invc.appload();
+      if (window.lampainit_invc)
+        window.lampainit_invc.appload();
 
-//      if (false)
-//        Lampa.Storage.set('full_btn_priority', '966825172');
+      if (false)
+        Lampa.Storage.set('full_btn_priority', '966825172');
 
-//      var unic_id = Lampa.Storage.get('lampac_unic_id', '');
-//      if (!unic_id) {
-//        unic_id = Lampa.Utils.uid(8).toLowerCase();
-//        Lampa.Storage.set('lampac_unic_id', unic_id);
-//      }
+      var unic_id = Lampa.Storage.get('lampac_unic_id', '');
+      if (!unic_id) {
+        unic_id = Lampa.Utils.uid(8).toLowerCase();
+        Lampa.Storage.set('lampac_unic_id', unic_id);
+      }
 
-////      Lampa.Utils.putScriptAsync(["https://lam.maxvol.pro/cubproxy.js", "https://lam.maxvol.pro/privateinit.js?account_email=" + encodeURIComponent(Lampa.Storage.get('account_email', '')) + "&uid=" + encodeURIComponent(Lampa.Storage.get('lampac_unic_id', ''))], function() {});
+//      Lampa.Utils.putScriptAsync(["https://lam.maxvol.pro/cubproxy.js", "https://lam.maxvol.pro/privateinit.js?account_email=" + encodeURIComponent(Lampa.Storage.get('account_email', '')) + "&uid=" + encodeURIComponent(Lampa.Storage.get('lampac_unic_id', ''))], function() {});
 
-//// Скрыть меню в настройках - Синхронизация, Парсер, TorrServer, IPTV, Расширения, TMDB
-//    Lampa.Settings.listener.follow('open', function(e) {
-//      $(['account', 'parser', 'iptv', 'plugins', 'tmdb'].map(function(c) {
-//        return '[data-component="' + c + '"]';
-//      }).join(','), e.body).remove();
-//    });
+// Скрыть меню в настройках - Синхронизация, Парсер, TorrServer, IPTV, Расширения, TMDB
+    Lampa.Settings.listener.follow('open', function(e) {
+      $(['account', 'parser', 'server', 'iptv', 'plugins', 'tmdb'].map(function(c) {
+        return '[data-component="' + c + '"]';
+      }).join(','), e.body).remove();
+    });
 
-//    // Скрыть разделы в меню
-//    Lampa.Listener.follow('app', (e) => {
-//      if (e.type === 'ready') {
-//        $("[data-action=feed]").hide();        // лента
-//        $("[data-action=myperson]").hide();    // cub подписка на актеров
-//        $("[data-action=subscribes]").hide();
-//        $("[data-action=mytorrents]").hide();
-//        $("[data-action=about]").hide();
-//        $("[data-action=console]").hide();
-//        $("[data-action=timetable]").hide();
-//      }
-//    });
+    // Скрыть разделы в меню
+    Lampa.Listener.follow('app', (e) => {
+      if (e.type === 'ready') {
+        $("[data-action=feed]").hide();        // лента
+        $("[data-action=myperson]").hide();    // cub подписка на актеров
+        $("[data-action=subscribes]").hide();
+        $("[data-action=mytorrents]").hide();
+        $("[data-action=about]").hide();
+        $("[data-action=console]").hide();
+        $("[data-action=timetable]").hide();
+      }
+    });
 
-//      if (!Lampa.Storage.get('lampac_initiale', 'false')) {
-//        if (window.appready) {
-//          if (window.lampainit_invc) window.lampainit_invc.appready();
-//          start();
-//        }
-//        else {
-//          Lampa.Listener.follow('app', function(e) {
-//            if (e.type == 'ready') {
-//              if (window.lampainit_invc) window.lampainit_invc.appready();
-//              start();
-//            }
-//          })
-//        }
-//      }
-//
-//    }
-//  }, 200);
+      if (!Lampa.Storage.get('lampac_initiale', 'false')) {
+        if (window.appready) {
+          if (window.lampainit_invc) window.lampainit_invc.appready();
+          start();
+        }
+        else {
+          Lampa.Listener.follow('app', function(e) {
+            if (e.type == 'ready') {
+              if (window.lampainit_invc) window.lampainit_invc.appready();
+              start();
+            }
+          })
+        }
+      }
+
+    }
+  }, 200);
 
   function start() {
     Lampa.Storage.set('lampac_initiale', 'true');
