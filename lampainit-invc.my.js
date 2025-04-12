@@ -43,7 +43,6 @@ window.lampainit_invc = {};
 
 // Лампа готова для использования
 window.lampainit_invc.appload = function appload() {
-Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.github.io/account.js", "https://bylampa.github.io/source.js", "https://bylampa.github.io/backmenu.js", "https://bylampa.github.io/seas_and_eps.js", "http://bwa.to/rc/889yfnh", "https://bwa.to/r", "https://levende.github.io/lampa-plugins/custom-favs.js", "https://levende.github.io/lampa-plugins/lampac-src-filter.js", "https://aviamovie.github.io/surs.js", "https://apxubatop.github.io/lmpPlugs/tvbutton.js", "https://anumbys.github.io/lampa/notextend.js", "https://BDVBurik.github.io/rezkacomment.js", "https://lampame.github.io/main/pubtorr/pubtorr.js"]);
 
     Lampa.Storage.set('parser_use', 'true');
     Lampa.Storage.set('jackett_url', 'https://jacred.xyz');
@@ -93,9 +92,9 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
 //      Lampa.Utils.putScriptAsync(["https://lam.maxvol.pro/cubproxy.js", "https://lam.maxvol.pro/privateinit.js?account_email=" + encodeURIComponent(Lampa.Storage.get('account_email', '')) + "&uid=" + encodeURIComponent(Lampa.Storage.get('lampac_unic_id', ''))], function() {});
 
-// Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения (, 'plugins'), TMDB
+// Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
     Lampa.Settings.listener.follow('open', function(e) {
-      $(['account', 'parser', 'iptv', 'plugins', 'tmdb'].map(function(c) {
+      $(['account', 'iptv', 'plugins', 'tmdb'].map(function(c) {
         return '[data-component="' + c + '"]';
       }).join(','), e.body).remove();
     });
@@ -115,6 +114,20 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
 
     Lampa.Settings.listener.follow('open', function (e) {
+//      if (e.name == 'tmdb') { // tmdb
+//        e.body.find('[data-name="proxy_tmdb_auto"]').remove();
+//        e.body.find('[data-name="proxy_tmdb"]').remove();
+//      }
+
+      // Разрешаем пользователю указывать локальный TS в "Дополнительная ссылка"
+      // если хотите скрыть раздел, добавьте на 174й строке 'server' в массив
+//      if (e.name == 'server') {
+//        e.body.find('[data-parent="login"]').remove();
+//        e.body.find('[data-name="torrserver_url"]').remove();
+//        e.body.find('[data-name="torrserver_auth"]').remove();
+//        e.body.find('[data-name="torrserver_savedb"]').remove();
+//        e.body.find('[data-name="torrserver_preload"]').remove();
+//      }
 
       if (e.name == 'interface') {
         e.body.find('[data-name="light_version"]').remove();
