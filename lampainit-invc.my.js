@@ -62,7 +62,7 @@ Lampa.Storage.set('start_page', 'last');
 
 Lampa.Storage.set('menu_sort', JSON.stringify([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "MIX RUS"]));
 
-Lampa.Storage.set('menu_hide', JSON.stringify([ "Расписание", "Релизы"]));
+Lampa.Storage.set('menu_hide', JSON.stringify([ "Расписание", "Релизы", "MIX"]));
 
 Lampa.Storage.set('surs_buttons', '7');
 Lampa.Storage.set('torrents_sort', 'size');
