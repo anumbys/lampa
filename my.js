@@ -92,7 +92,18 @@ Lampa.Storage.set('torrents_sort', 'size');
 //    Lampa.Storage.set('video_quality_default', '2160');
     Lampa.Storage.set('poster_size', 'w500');
 
-
+    // Скрыть разделы в меню
+    Lampa.Listener.follow('app', function(e) {
+      if (e.type === 'ready') {
+        $("[data-action=feed]").hide();        // лента
+        $("[data-action=myperson]").hide();    // cub подписка на актеров
+        $("[data-action=subscribes]").hide();  // cub подписки
+//        $("[data-action=mytorrents]").hide();
+        $("[data-action=about]").hide();
+        $("[data-action=console]").hide();
+        $("[data-action=timetable]").hide();
+      }
+    });
 
 // убрать с интерфейса колокольчик и звёздочку
 var styleElement = document.createElement('style');
@@ -122,24 +133,10 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
 // Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
     Lampa.Settings.listener.follow('open', function(e) {
-      $(['account', 'parser', 'iptv', 'tmdb'].map(function(c) {
+      $(['account', 'parser', 'iptv', 'tmdb', 'parental_control'].map(function(c) {
         return '[data-component="' + c + '"]';
       }).join(','), e.body).remove();
     });
-
-    // Скрыть разделы в меню
-    Lampa.Listener.follow('app', function(e) {
-      if (e.type === 'ready') {
-        $("[data-action=feed]").hide();        // лента
-        $("[data-action=myperson]").hide();    // cub подписка на актеров
-        $("[data-action=subscribes]").hide();  // cub подписки
-//        $("[data-action=mytorrents]").hide();
-        $("[data-action=about]").hide();
-        $("[data-action=console]").hide();
-        $("[data-action=timetable]").hide();
-      }
-    });
-
 
     Lampa.Settings.listener.follow('open', function (e) {
 
