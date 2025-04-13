@@ -6,18 +6,22 @@
             {
               id: '',
               name: 'Profile 1',
-              title: 'John',
+              title: 'Главный',
               params: {
                 adult: true,
+        extraSettings: {
+          hideAnime: true
+        }
               },
             },
             {
               id: 'profile_2',
-              title: 'gfhfh',
+              title: '2',
               icon: 'https://cdn.cub.red/img/profiles/f_2.png'
             },
             {
               id: 'profile_3',
+              title: '3',
               icon: 'https://cdn.cub.red/img/profiles/f_1.png'
             }
        ]
