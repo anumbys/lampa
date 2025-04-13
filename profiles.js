@@ -5,13 +5,15 @@
         profiles: [
             {
               id: '',
-              name: 'dfd 1',
+              name: 'Profile 1',
+              title: 'John',
               params: {
                 adult: true,
               },
             },
             {
               id: 'profile_2',
+              title: 'gfhfh',
               icon: 'https://cdn.cub.red/img/profiles/f_2.png'
             },
             {
