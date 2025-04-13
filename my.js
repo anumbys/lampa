@@ -31,16 +31,14 @@
 
 window.lampainit_invc = {};
 
-
-# удалить все плагины которые установлены в памяти устройства
-# Потому что теперь они грузятся через лампаинит, хочу удалить сразу все на всех устройствах
-Lampa.Storage.set('plugins', '[]')
-
 // Лампа готова для использования
 window.lampainit_invc.appload = function appload() {
 Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.github.io/account.js", "https://bylampa.github.io/source.js", "https://bylampa.github.io/backmenu.js", "https://bylampa.github.io/seas_and_eps.js", "https://levende.github.io/lampa-plugins/custom-favs.js", "https://levende.github.io/lampa-plugins/lampac-src-filter.js", "https://aviamovie.github.io/surs.js", "https://apxubatop.github.io/lmpPlugs/tvbutton.js", "https://anumbys.github.io/lampa/notextend.js", "https://BDVBurik.github.io/rezkacomment.js"], function() {});
 // (, "https://lampame.github.io/main/pubtorr/pubtorr.js "http://bwa.to/rc/889yfnh", "https://bwa.to/r")
 
+ удалить все плагины которые установлены в памяти устройства?
+# Потому что теперь они грузятся через лампаинит, хочу удалить сразу все на всех устройствах
+Lampa.Storage.set('plugins', '[]')
 
     // Добовляем плагины по умолчанию, чтобы руками не вписывать. Выше есть и другой вариантю, no ne vse plagini podgruzhajutsa
 var plugins = Lampa.Plugins.get();
@@ -104,6 +102,8 @@ Lampa.Storage.set('torrents_sort', 'size');
 window.lampainit_invc.first_initiale = function firstinitiale() {
    Lampa.Storage.set('source', 'MIX');
 }
+
+
 
 // убрать с интерфейса колокольчик и звёздочку
 var styleElement = document.createElement('style');
