@@ -17,6 +17,9 @@
             {
               id: 'profile_2',
               title: '2',
+              params: {
+                hideAnime: true,
+              },
               icon: 'https://cdn.cub.red/img/profiles/f_2.png'
             },
             {
