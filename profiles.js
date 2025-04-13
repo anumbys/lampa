@@ -3,29 +3,21 @@
 
     window.profiles_settings = {
         profiles: [
-    {
-      "id": ""
-      "title": 'Profile 1',
-    },
-    {
-      "id": "profile_2", 
-      "title": "John", 
-      "icon": "https://cdn.cub.red/img/profiles/f_2.png",
-      "params": {
-        "adult": true,
-        "extraSettings": {
-//          "hideAnime": true
-        }
-      }
-    },
-    {
-      "id": "profile_3", 
-      "title": "Anna", 
-      "icon": "https://cdn.cub.red/img/profiles/f_1.png",
-      "params": {
-//        "hideHorrors": true
-      }
-    }
+            {
+              id: '',
+              name: 'Profile 1',
+              params: {
+                adult: true,
+              },
+            },
+            {
+              id: 'profile_2',
+              icon: 'https://cdn.cub.red/img/profiles/f_2.png'
+            },
+            {
+              id: 'profile_3',
+              icon: 'https://cdn.cub.red/img/profiles/f_2.png'
+            }
        ]
     };
 
