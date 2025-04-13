@@ -35,7 +35,7 @@ window.lampainit_invc = {};
 window.lampainit_invc.appload = function appload() {
 // удалить все плагины которые установлены в памяти устройства?
 // Потому что теперь они грузятся через лампаинит, хочу удалить сразу все на всех устройствах
-Lampa.Storage.set('plugins', '[]')
+Lampa.Storage.set('plugins', '["https://anumbys.github.io/lampa/my.js"]')
 // Добовляем плагины, но без возможности отключить (в плагинах отображаться не будет)
 Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.github.io/account.js", "https://bylampa.github.io/source.js", "https://bylampa.github.io/backmenu.js", "https://bylampa.github.io/seas_and_eps.js", "https://levende.github.io/lampa-plugins/custom-favs.js", "https://levende.github.io/lampa-plugins/lampac-src-filter.js", "https://aviamovie.github.io/surs.js", "https://apxubatop.github.io/lmpPlugs/tvbutton.js", "https://anumbys.github.io/lampa/notextend.js", "https://BDVBurik.github.io/rezkacomment.js"], function() {});
 
@@ -68,7 +68,7 @@ plugins_add.forEach(function (plugin) {
 if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, function () { }, function () { }, true);
     // Добовляем плагины по умолчанию, чтобы руками не вписывать. END
 
-
+// прописать в Лампаке свой жакет, TorrServer
     Lampa.Storage.set('parser_use', 'true');
     Lampa.Storage.set('jackett_url', 'https://jacred.xyz');
 //    Lampa.Storage.set('jackett_key', '1');
