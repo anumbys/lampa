@@ -78,8 +78,8 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
 
 
 //    Lampa.Storage.set('surs_disableCustomName', true);
-    Lampa.Storage.set('surs_name', 'MIX');
-   Lampa.Storage.set('source', 'MIX');
+    Lampa.Storage.set('surs_name', 'MIX'); // Название источника AVIAMOVIE
+    Lampa.Storage.set('source', 'MIX');    //    Источник по умолчанию
 }
 
 Lampa.Storage.set('start_page', 'last');
@@ -92,18 +92,7 @@ Lampa.Storage.set('torrents_sort', 'size');
 //    Lampa.Storage.set('video_quality_default', '2160');
     Lampa.Storage.set('poster_size', 'w500');
 
-    // Скрыть разделы в меню
-    Lampa.Listener.follow('app', function(e) {
-      if (e.type === 'ready') {
-        $("[data-action=feed]").hide();        // лента
-        $("[data-action=myperson]").hide();    // cub подписка на актеров
-        $("[data-action=subscribes]").hide();  // cub подписки
-//        $("[data-action=mytorrents]").hide();
-        $("[data-action=about]").hide();
-        $("[data-action=console]").hide();
-        $("[data-action=timetable]").hide();
-      }
-    });
+
 
 // убрать с интерфейса колокольчик и звёздочку
 var styleElement = document.createElement('style');
