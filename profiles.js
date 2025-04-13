@@ -9,7 +9,7 @@
               title: 'Главный',
               params: {
                 adult: true,
-                hideAnime: true
+                hideAnime: true,
               },
             },
             {
