@@ -37,7 +37,7 @@ window.lampainit_invc.appload = function appload() {
 // Потому что теперь они грузятся через лампаинит, хочу удалить сразу все на всех устройствах
 Lampa.Storage.set('plugins', '["https://anumbys.github.io/lampa/my.js"]')
 // Добовляем плагины, но без возможности отключить (в плагинах отображаться не будет)
-Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.github.io/account.js", "https://bylampa.github.io/source.js", "https://bylampa.github.io/backmenu.js", "https://bylampa.github.io/seas_and_eps.js", "https://levende.github.io/lampa-plugins/custom-favs.js", "https://levende.github.io/lampa-plugins/lampac-src-filter.js", "https://aviamovie.github.io/surs.js", "https://apxubatop.github.io/lmpPlugs/tvbutton.js", "https://anumbys.github.io/lampa/notextend.js", "https://BDVBurik.github.io/rezkacomment.js"], function() {});
+Lampa.Utils.putScriptAsync(["https://anumbys.github.io/lampa/my.js", "https://cub.red/plugin/tracks", "https://bylampa.github.io/account.js", "https://bylampa.github.io/source.js", "https://bylampa.github.io/backmenu.js", "https://bylampa.github.io/seas_and_eps.js", "https://levende.github.io/lampa-plugins/custom-favs.js", "https://levende.github.io/lampa-plugins/lampac-src-filter.js", "https://aviamovie.github.io/surs.js", "https://apxubatop.github.io/lmpPlugs/tvbutton.js", "https://anumbys.github.io/lampa/notextend.js", "https://BDVBurik.github.io/rezkacomment.js"], function() {});
 
     // Добовляем плагины по умолчанию, чтобы руками не вписывать.
 var plugins = Lampa.Plugins.get();
@@ -68,14 +68,16 @@ plugins_add.forEach(function (plugin) {
 if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, function () { }, function () { }, true);
     // Добовляем плагины по умолчанию, чтобы руками не вписывать. END
 
-// прописать в Лампаке свой жакет, TorrServer
+// Jacket and Torrserver
     Lampa.Storage.set('parser_use', 'true');
     Lampa.Storage.set('jackett_url', 'https://jacred.xyz');
 //    Lampa.Storage.set('jackett_key', '1');
     Lampa.Storage.set('parser_torrent_type', 'jackett');
     Lampa.Storage.set('parse_in_search', 'true');
-//    Lampa.Storage.set('torrserver_url','https://ts.maxvol.pro'),
+//    Lampa.Storage.set('torrserver_url',''),
     Lampa.Storage.set('internal_torrclient', 'true'); // включенный встроенный клиент торсервера
+    
+    
 //    Lampa.Storage.set('surs_disableCustomName', true);
     Lampa.Storage.set('surs_name', 'MIX');
 }
