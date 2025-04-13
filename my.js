@@ -34,21 +34,18 @@ window.lampainit_invc = {};
 // Лампа готова для использования
 window.lampainit_invc.appload = function appload() {
 Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.github.io/account.js", "https://bylampa.github.io/source.js", "https://bylampa.github.io/backmenu.js", "https://bylampa.github.io/seas_and_eps.js", "https://levende.github.io/lampa-plugins/custom-favs.js", "https://levende.github.io/lampa-plugins/lampac-src-filter.js", "https://aviamovie.github.io/surs.js", "https://apxubatop.github.io/lmpPlugs/tvbutton.js", "https://anumbys.github.io/lampa/notextend.js", "https://BDVBurik.github.io/rezkacomment.js"], function() {});
-// (, "https://lampame.github.io/main/pubtorr/pubtorr.js "http://bwa.to/rc/889yfnh", "https://bwa.to/r")
 
-
-    // Добовляем плагины по умолчанию, чтобы руками не вписывать. Выше есть и другой вариантю, no ne vse plagini podgruzhajutsa
+    // Добовляем плагины по умолчанию, чтобы руками не вписывать. no ne vse plagini podgruzhajutsa
 var plugins = Lampa.Plugins.get();
 
 var plugins_add = [
-{"url": "https://lampame.github.io/main/pubtorr/pubtorr.js","status": 0,"name": "Публичные парсеры","author": "lampac"},
 {"url": "http://bwa.to/rc/889yfnh","status": 1,"name": "BwaRC Онлайн","author": "lampac"},
 {"url": "https://bwa.to/r","status": 1,"name": "Radio Record","author": "lampac"},
 {"url": "https://anumbys.github.io/lampa/profiles.js","status": 0,"name": "Профили","author": "lampac"},
 {"url": "https://kartmansms.github.io/lampa/Shikimori/Shikimori.js","status": 0,"name": "LME Shikimori Mod","author": "lampac"},
 {"url": "https://lampame.github.io/main/MovieEnhancer/MovieEnhancer.js","status": 0,"name": "Доп. инфо в карточке","author": "lampac"},
-{"url": "https://lampame.github.io/main/newcategory.js","status": 0,"name": "Дополнительные категории","author": "lampac"},
-{"url": "https://lampame.github.io/main/pubtorr.js","status": 0,"name": "Публичные парсеры","author": "lampac"}
+{"url": "https://lampame.github.io/main/nc/nc.js","status": 0,"name": "Дополнительные категории","author": "lampac"},
+//{"url": "https://lampame.github.io/main/pubtorr/pubtorr.js","status": 0,"name": "Публичные парсеры","author": "lampac"},
 ];
 
 var plugins_push = []
@@ -65,7 +62,7 @@ plugins_add.forEach(function (plugin) {
 });
 
 if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, function () { }, function () { }, true);
-    // Добовляем плагины по умолчанию, чтобы руками не вписывать. Выше есть и другой вариантю END
+    // Добовляем плагины по умолчанию, чтобы руками не вписывать. END
 
 
     Lampa.Storage.set('parser_use', 'true');
