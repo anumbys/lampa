@@ -1,8 +1,6 @@
 (function() {
   'use strict';
 
-  // Первоначальная сортировка меню
-
   window.lampa_settings = {
     torrents_use: true,    // кнопка торренты включена
     demo: false,           // demo off
@@ -33,7 +31,7 @@ window.lampainit_invc = {};
 
 
 window.lampainit_invc.appload = function appload() {
-// Удалить все плагины которые установлены в памяти устройства. При таком случае если лампа и плагин на одном сервере
+// Удалить все плагины которые установлены в памяти устройства. Применять только, когда лампа и плагин на одном сервере
 // Lampa.Storage.set('plugins', '["https://bylampa.github.io/tmdb-proxy.js"]')
 // Добовляем плагины, но без возможности отключить (в плагинах отображаться не будет)
 Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.github.io/account.js", "https://bylampa.github.io/source.js", "https://bylampa.github.io/backmenu.js", "https://bylampa.github.io/seas_and_eps.js", "https://levende.github.io/lampa-plugins/custom-favs.js", "https://levende.github.io/lampa-plugins/lampac-src-filter.js", "https://aviamovie.github.io/surs.js", "https://apxubatop.github.io/lmpPlugs/tvbutton.js", "https://anumbys.github.io/lampa/notextend.js", "https://BDVBurik.github.io/rezkacomment.js"], function() {});
@@ -82,10 +80,11 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
     Lampa.Storage.set('source', 'MIX');    //    Источник по умолчанию
 }
 
-Lampa.Storage.set('start_page', 'last');
-Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));
+Lampa.Storage.set('start_page', 'last');  // Стартовая страница
+Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
 Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
 Lampa.Storage.set('torrents_sort', 'size');
+
 //// Лампа полностью загружена, можно работать с интерфейсом
 
     Lampa.Storage.set('lampac_initiale', 'true');
@@ -110,10 +109,7 @@ var styleElement = document.createElement('style');
     styleElement.innerHTML = '.head .notice--icon { display: none; }';
     document.body.appendChild(styleElement);
 
-// Выполняется один раз, когда пользователь впервые открывает лампу
-window.lampainit_invc.first_initiale = function firstinitiale() {
-}
-
+// Удаляю компоненты
   var timer = setInterval(function() {
     if (typeof Lampa !== 'undefined') {
 
@@ -170,6 +166,6 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 
     }
   }, 200);
-
+// Удаляю компоненты END
 
 })();
