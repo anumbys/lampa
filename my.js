@@ -75,11 +75,35 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
     Lampa.Storage.set('parse_in_search', 'true');
 //    Lampa.Storage.set('torrserver_url',''),
     Lampa.Storage.set('internal_torrclient', 'true'); // включенный встроенный клиент торсервера
-    
-    
+
+
 //    Lampa.Storage.set('surs_disableCustomName', true);
     Lampa.Storage.set('surs_name', 'MIX');
 }
+
+;
+
+// Выполняется один раз, когда пользователь впервые открывает лампу
+window.lampainit_invc.first_initiale = function firstinitiale() {
+   Lampa.Storage.set('source', 'MIX');
+}
+
+  var timer = setInterval(function() {
+    if (typeof Lampa !== 'undefined') {
+
+      clearInterval(timer);
+
+      if (window.lampainit_invc)
+        window.lampainit_invc.appload();
+
+      if (false)
+        Lampa.Storage.set('full_btn_priority', '966825172');
+
+      var unic_id = Lampa.Storage.get('lampac_unic_id', '');
+      if (!unic_id) {
+        unic_id = Lampa.Utils.uid(8).toLowerCase();
+        Lampa.Storage.set('lampac_unic_id', unic_id);
+      }
 
 Lampa.Storage.set('start_page', 'last');
 Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));
@@ -107,29 +131,7 @@ Lampa.Storage.set('torrents_sort', 'size');
 // убрать с интерфейса колокольчик и звёздочку
 var styleElement = document.createElement('style');
     styleElement.innerHTML = '.head .notice--icon { display: none; }';
-    document.body.appendChild(styleElement);
-    
-// Выполняется один раз, когда пользователь впервые открывает лампу
-window.lampainit_invc.first_initiale = function firstinitiale() {
-   Lampa.Storage.set('source', 'MIX');
-}
-
-  var timer = setInterval(function() {
-    if (typeof Lampa !== 'undefined') {
-
-      clearInterval(timer);
-
-      if (window.lampainit_invc)
-        window.lampainit_invc.appload();
-
-      if (false)
-        Lampa.Storage.set('full_btn_priority', '966825172');
-
-      var unic_id = Lampa.Storage.get('lampac_unic_id', '');
-      if (!unic_id) {
-        unic_id = Lampa.Utils.uid(8).toLowerCase();
-        Lampa.Storage.set('lampac_unic_id', unic_id);
-      }
+    document.body.appendChild(styleElement)
 
 // Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
     Lampa.Settings.listener.follow('open', function(e) {
