@@ -5,7 +5,7 @@
         profiles: [
             {
               id: '',
-              name: 'Profile 1',
+              name: 'dfd 1',
               params: {
                 adult: true,
               },
@@ -16,7 +16,7 @@
             },
             {
               id: 'profile_3',
-              icon: 'https://cdn.cub.red/img/profiles/f_2.png'
+              icon: 'https://cdn.cub.red/img/profiles/f_1.png'
             }
        ]
     };
