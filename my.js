@@ -31,11 +31,12 @@
 
 window.lampainit_invc = {};
 
-// Лампа готова для использования
+
 window.lampainit_invc.appload = function appload() {
+// Добовляем плагины, но без возможности отключить (в плагинах отображаться не будет)
 Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks", "https://bylampa.github.io/account.js", "https://bylampa.github.io/source.js", "https://bylampa.github.io/backmenu.js", "https://bylampa.github.io/seas_and_eps.js", "https://levende.github.io/lampa-plugins/custom-favs.js", "https://levende.github.io/lampa-plugins/lampac-src-filter.js", "https://aviamovie.github.io/surs.js", "https://apxubatop.github.io/lmpPlugs/tvbutton.js", "https://anumbys.github.io/lampa/notextend.js", "https://BDVBurik.github.io/rezkacomment.js"], function() {});
 
-    // Добовляем плагины по умолчанию, чтобы руками не вписывать. no ne vse plagini podgruzhajutsa
+    // Добовляем плагины по умолчанию, чтобы руками не вписывать.
 var plugins = Lampa.Plugins.get();
 
 var plugins_add = [
