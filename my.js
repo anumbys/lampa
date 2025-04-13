@@ -101,6 +101,19 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
 }
 
 
+
+
+var styleElement = document.createElement('style');
+    styleElement.innerHTML = '.head .notice--icon { display: none; }';
+    document.body.appendChild(styleElement);
+
+
+
+
+
+
+
+
   var timer = setInterval(function() {
     if (typeof Lampa !== 'undefined') {
 
