@@ -100,9 +100,11 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
    Lampa.Storage.set('source', 'MIX');
 }
 
+# удалить все плагины которые установлены в памяти устройства
+# Потому что теперь они грузятся через лампаинит, хочу удалить сразу все на всех устройствах
+Lampa.Storage.set('plugins', '[]')
 
-
-
+// убрать с интерфейса колокольчик и звёздочку
 var styleElement = document.createElement('style');
     styleElement.innerHTML = '.head .notice--icon { display: none; }';
     document.body.appendChild(styleElement);
