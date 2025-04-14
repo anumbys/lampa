@@ -20,6 +20,16 @@
               id: 'profile_3',
               title: '3',
               icon: 'https://cdn.cub.red/img/profiles/f_1.png'
+            },
+            {
+              id: 'profile_4',
+              title: '4',
+              icon: 'https://cub.red/img/profiles/l_3.png'
+            },
+            {
+              id: 'profile_5',
+              title: '5',
+              icon: 'https://cub.red/img/profiles/l_5.png'
             }
        ]
     };
