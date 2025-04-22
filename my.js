@@ -158,7 +158,7 @@ window.lampainit_invc.first_initiale = function firstinitiale() {
   }, 200);
 // Удаляю компоненты END
 
-function start(
+  function start() {
 
 
 
