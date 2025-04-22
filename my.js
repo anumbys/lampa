@@ -74,6 +74,7 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
     Lampa.Storage.set('internal_torrclient', 'true'); // включенный встроенный клиент торсервера
 
 // Постояные настроики, после изминений и перезагрузке настроики перключаются обратно на эти первоначалные
+//   "function start() {}" не работает
 //    Lampa.Storage.set('surs_disableCustomName', true);
     Lampa.Storage.set('surs_name', 'MIX'); // Название источника AVIAMOVIE
     Lampa.Storage.set('source', 'MIX');    //    Источник по умолчанию
