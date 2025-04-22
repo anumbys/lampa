@@ -78,12 +78,12 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
 //    Lampa.Storage.set('surs_disableCustomName', true);
     Lampa.Storage.set('surs_name', 'MIX'); // Название источника AVIAMOVIE
     Lampa.Storage.set('source', 'MIX');    //    Источник по умолчанию
-}
-
 Lampa.Storage.set('start_page', 'last');  // Стартовая страница
 Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
 Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
 Lampa.Storage.set('torrents_sort', 'size');
+}
+
 
 //// Лампа полностью загружена, можно работать с интерфейсом
 
