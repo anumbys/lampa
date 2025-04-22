@@ -86,7 +86,7 @@ Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
 Lampa.Storage.set('torrents_sort', 'size');
 
 //// Лампа полностью загружена, можно работать с интерфейсом
-//    Lampa.Storage.set('lampac_initiale', 'true');
+    Lampa.Storage.set('lampac_initiale', 'true');
 //    Lampa.Storage.set('video_quality_default', '2160');    // Настройки, плеер, качество видео по умолчанию 2160/1080/720
     Lampa.Storage.set('poster_size', 'w500');          
 }
