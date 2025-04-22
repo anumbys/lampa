@@ -163,7 +163,6 @@ var styleElement = document.createElement('style');
 
 function start() {
 
-    if (!Lampa.Storage.get('lampac_initiale', 'false')) {
       Lampa.Storage.set('lampac_initiale', 'true');
 
       Lampa.Storage.set('animation', 'false');               // Анимация отключена
@@ -183,11 +182,8 @@ Lampa.Storage.set('torrents_sort', 'size');
     Lampa.Storage.set('poster_size', 'w500');                             // Разрешение постеров TMDB - среднее
       
       
-      
-      
-      
-      
-    }
+    if (window.lampainit_invc)
+      window.lampainit_invc.first_initiale();
 
 }
 
