@@ -126,8 +126,4 @@ var styleElement = document.createElement('style');
   }, 200);
 // Удаляю компоненты END
 
-  function start() {		
-
-  }
-
 })();
