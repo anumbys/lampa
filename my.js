@@ -168,8 +168,8 @@ plugins_add.forEach(function (plugin) {
 if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, function () { }, function () { }, true);
     // Добовляем плагины по умолчанию, чтобы руками не вписывать. END
 	
-    if (window.lampainit_invc)
-      window.lampainit_invc.first_initiale();
+//    if (window.lampainit_invc)
+//      window.lampainit_invc.first_initiale();
 
     /*
     setTimeout(function(){
