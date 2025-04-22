@@ -75,16 +75,6 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
 
 //    Lampa.Storage.set('surs_disableCustomName', true);
     Lampa.Storage.set('surs_name', 'MIX'); // Название источника AVIAMOVIE
-    Lampa.Storage.set('source', 'MIX');    //    Источник по умолчанию
-Lampa.Storage.set('start_page', 'last');  // Стартовая страница
-Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
-Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
-Lampa.Storage.set('torrents_sort', 'size');
-
-//// Лампа полностью загружена, можно работать с интерфейсом
-    Lampa.Storage.set('lampac_initiale', 'true');
-//    Lampa.Storage.set('video_quality_default', '2160');
-    Lampa.Storage.set('poster_size', 'w500');
 }
 
     // Скрыть разделы в меню
@@ -104,6 +94,11 @@ Lampa.Storage.set('torrents_sort', 'size');
 var styleElement = document.createElement('style');
     styleElement.innerHTML = '.head .notice--icon { display: none; }';
     document.body.appendChild(styleElement);
+
+  // Выполняется один раз, когда пользователь впервые открывает лампу
+window.lampainit_invc.first_initiale = function firstinitiale() {
+   Lampa.Storage.set('source', 'MIX');
+}
 
 // Удаляю компоненты
   var timer = setInterval(function() {
@@ -162,5 +157,31 @@ var styleElement = document.createElement('style');
     }
   }, 200);
 // Удаляю компоненты END
+
+function start(
+
+
+
+Lampa.Storage.set('start_page', 'last');  // Стартовая страница
+Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
+Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
+Lampa.Storage.set('torrents_sort', 'size');
+
+//// Лампа полностью загружена, можно работать с интерфейсом
+    Lampa.Storage.set('lampac_initiale', 'true');
+//    Lampa.Storage.set('video_quality_default', '2160');
+    Lampa.Storage.set('poster_size', 'w500');
+
+
+
+    if (window.lampainit_invc)
+      window.lampainit_invc.first_initiale();
+
+    /*
+    setTimeout(function(){
+        Lampa.Noty.show('Плагины установлены, перезагрузка через 5 секунд.',{time: 5000})
+    },5000)
+    */
+  }
 
 })();
