@@ -35,34 +35,7 @@ window.lampainit_invc.appload = function appload() {
 // Добовляем плагины, но без возможности отключить (в плагинах отображаться не будет)
 Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks","https://bylampa.github.io/account.js","https://bylampa.github.io/source.js","https://bylampa.github.io/backmenu.js","https://bylampa.github.io/seas_and_eps.js","https://aviamovie.github.io/surs.js","https://levende.github.io/lampa-plugins/custom-favs.js","https://levende.github.io/lampa-plugins/lampac-src-filter.js","https://apxubatop.github.io/lmpPlugs/tvbutton.js","https://anumbys.github.io/lampa/notextend.js","https://BDVBurik.github.io/rezkacomment.js"], function() {});
 
-    // Добовляем плагины по умолчанию, чтобы руками не вписывать.
-var plugins = Lampa.Plugins.get();
 
-var plugins_add = [
-{"url": "http://bwa.to/rc/889yfnh","status": 1,"name": "BwaRC Онлайн","author": "lampac"},
-{"url": "https://bwa.to/r","status": 1,"name": "Radio Record","author": "lampac"},
-{"url": "https://anumbys.github.io/lampa/profiles.js","status": 0,"name": "Профили","author": "lampac"},
-{"url": "https://kartmansms.github.io/lampa/Shikimori/Shikimori.js","status": 0,"name": "LME Shikimori Mod","author": "lampac"},
-{"url": "https://lampame.github.io/main/MovieEnhancer/MovieEnhancer.js","status": 0,"name": "Доп. инфо в карточке","author": "lampac"},
-{"url": "https://lampame.github.io/main/nc/nc.js","status": 0,"name": "Дополнительные категории","author": "lampac"}
-//{"url": "https://lampame.github.io/main/pubtorr/pubtorr.js","status": 0,"name": "Публичные парсеры","author": "lampac"}
-];
-
-var plugins_push = []
-
-plugins_add.forEach(function (plugin) {
-    if (!plugins.find(function (a) {
-        return a.url == plugin.url
-    })) {
-        Lampa.Plugins.add(plugin);
-        Lampa.Plugins.save();
-
-        plugins_push.push(plugin.url)
-    }
-});
-
-if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, function () { }, function () { }, true);
-    // Добовляем плагины по умолчанию, чтобы руками не вписывать. END
 
 // Jacket and Torrserver
     Lampa.Storage.set('parser_use', 'true');
@@ -75,16 +48,6 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
 
 //    Lampa.Storage.set('surs_disableCustomName', true);
     Lampa.Storage.set('surs_name', 'MIX'); // Название источника AVIAMOVIE
-    Lampa.Storage.set('source', 'MIX');    //    Источник по умолчанию
-Lampa.Storage.set('start_page', 'last');  // Стартовая страница
-Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
-Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
-Lampa.Storage.set('torrents_sort', 'size');
-
-//// Лампа полностью загружена, можно работать с интерфейсом
-    Lampa.Storage.set('lampac_initiale', 'true');
-//    Lampa.Storage.set('video_quality_default', '2160');
-    Lampa.Storage.set('poster_size', 'w500');
 }
 
     // Скрыть разделы в меню
@@ -162,5 +125,57 @@ var styleElement = document.createElement('style');
     }
   }, 200);
 // Удаляю компоненты END
+
+  function start() {		
+
+    Lampa.Storage.set('source', 'MIX');    //    Источник по умолчанию
+Lampa.Storage.set('start_page', 'last');  // Стартовая страница
+Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
+Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
+Lampa.Storage.set('torrents_sort', 'size');
+
+//// Лампа полностью загружена, можно работать с интерфейсом
+    Lampa.Storage.set('lampac_initiale', 'true');
+//    Lampa.Storage.set('video_quality_default', '2160');
+    Lampa.Storage.set('poster_size', 'w500');
+
+    // Добовляем плагины по умолчанию, чтобы руками не вписывать.
+var plugins = Lampa.Plugins.get();
+
+var plugins_add = [
+{"url": "http://bwa.to/rc/889yfnh","status": 1,"name": "BwaRC Онлайн","author": "lampac"},
+{"url": "https://bwa.to/r","status": 1,"name": "Radio Record","author": "lampac"},
+{"url": "https://anumbys.github.io/lampa/profiles.js","status": 0,"name": "Профили","author": "lampac"},
+{"url": "https://kartmansms.github.io/lampa/Shikimori/Shikimori.js","status": 0,"name": "LME Shikimori Mod","author": "lampac"},
+{"url": "https://lampame.github.io/main/MovieEnhancer/MovieEnhancer.js","status": 0,"name": "Доп. инфо в карточке","author": "lampac"},
+{"url": "https://lampame.github.io/main/nc/nc.js","status": 0,"name": "Дополнительные категории","author": "lampac"}
+//{"url": "https://lampame.github.io/main/pubtorr/pubtorr.js","status": 0,"name": "Публичные парсеры","author": "lampac"}
+];
+
+var plugins_push = []
+
+plugins_add.forEach(function (plugin) {
+    if (!plugins.find(function (a) {
+        return a.url == plugin.url
+    })) {
+        Lampa.Plugins.add(plugin);
+        Lampa.Plugins.save();
+
+        plugins_push.push(plugin.url)
+    }
+});
+
+if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, function () { }, function () { }, true);
+    // Добовляем плагины по умолчанию, чтобы руками не вписывать. END
+	
+//    if (window.lampainit_invc)
+//      window.lampainit_invc.first_initiale();
+
+    /*
+    setTimeout(function(){
+        Lampa.Noty.show('Плагины установлены, перезагрузка через 5 секунд.',{time: 5000})
+    },5000)
+    */
+  }
 
 })();
