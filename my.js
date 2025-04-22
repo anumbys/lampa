@@ -89,6 +89,11 @@ Lampa.Storage.set('torrents_sort', 'size');
     Lampa.Storage.set('poster_size', 'w500');
 }
 
+// Выполняется один раз, когда пользователь впервые открывает лампу
+window.lampainit_invc.first_initiale = function firstinitiale() {
+//   Lampa.Storage.set('source', 'MIX');
+}
+
     // Скрыть разделы в меню
     Lampa.Listener.follow('app', function(e) {
       if (e.type === 'ready') {
