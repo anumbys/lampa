@@ -45,7 +45,6 @@ var plugins_add = [
 {"url": "https://kartmansms.github.io/lampa/Shikimori/Shikimori.js","status": 0,"name": "LME Shikimori Mod","author": "lampac"},
 {"url": "https://lampame.github.io/main/MovieEnhancer/MovieEnhancer.js","status": 0,"name": "Доп. инфо в карточке","author": "lampac"},
 {"url": "https://lampame.github.io/main/nc/nc.js","status": 0,"name": "Дополнительные категории","author": "lampac"},
-{"url": "https://cub.red/plugin/tracks","status": 1},
 {"url": "https://bylampa.github.io/account.js","status": 1},
 {"url": "https://bylampa.github.io/source.js","status": 1},
 {"url": "https://bylampa.github.io/backmenu.js","status": 1},
