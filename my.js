@@ -53,7 +53,7 @@ var plugins_add = [
 {"url": "https://aviamovie.github.io/surs.js","status": 1},
 {"url": "https://levende.github.io/lampa-plugins/custom-favs.js","status": 1},
 {"url": "https://levende.github.io/lampa-plugins/lampac-src-filter.js","status": 1},
-{"url": "https://apxubatop.github.io/lmpPlugs/tvbutton.js","status": 1}
+{"url": "https://apxubatop.github.io/lmpPlugs/tvbutton.js","status": 1},
 {"url": "https://BDVBurik.github.io/rezkacomment.js","status": 1}
 //{"url": "https://lampame.github.io/main/pubtorr/pubtorr.js","status": 0,"name": "Публичные парсеры","author": "lampac"}
 ];
