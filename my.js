@@ -33,7 +33,7 @@ window.lampainit_invc.appload = function appload() {
 // Удалить все плагины которые установлены в памяти устройства. Применять только когда лампа и плагин на одном сервере
 // Lampa.Storage.set('plugins', '["https://bylampa.github.io/tmdb-proxy.js"]')
 // Добовляем плагины, но без возможности отключить (в плагинах отображаться не будет)
-Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks","https://bylampa.github.io/account.js","https://bylampa.github.io/source.js","https://bylampa.github.io/backmenu.js","https://bylampa.github.io/seas_and_eps.js","https://aviamovie.github.io/surs.js","https://levende.github.io/lampa-plugins/custom-favs.js","https://levende.github.io/lampa-plugins/lampac-src-filter.js","https://anumbys.github.io/lampa/notextend.js","https://BDVBurik.github.io/rezkacomment.js"], function() {});
+Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks","https://bylampa.github.io/account.js","https://bylampa.github.io/source.js","https://bylampa.github.io/backmenu.js","https://bylampa.github.io/seas_and_eps.js","https://aviamovie.github.io/surs.js","https://levende.github.io/lampa-plugins/custom-favs.js","https://levende.github.io/lampa-plugins/lampac-src-filter.js","https://apxubatop.github.io/lmpPlugs/tvbutton.js","https://anumbys.github.io/lampa/notextend.js","https://BDVBurik.github.io/rezkacomment.js"], function() {});
 
     // Добовляем плагины по умолчанию, чтобы руками не вписывать.
 var plugins = Lampa.Plugins.get();
@@ -80,11 +80,11 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
 //   "function start() {}" не работает
     Lampa.Storage.set('lampac_initiale', 'true');
       Lampa.Storage.set('animation', 'false');               // Анимация отключена
-      Lampa.Storage.set('protocol', 'https');                 // cub api протокол http/https
+      Lampa.Storage.set('protocol', 'http');                 // cub api протокол http/https
 Lampa.Storage.set('start_page', 'last');  // Стартовая страница
 Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
 Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
-Lampa.Storage.set('torrents_sort', 'size');
+//Lampa.Storage.set('torrents_sort', 'size');
 
 //// Лампа полностью загружена, можно работать с интерфейсом
 //    Lampa.Storage.set('video_quality_default', '2160');    // Настройки, плеер, качество видео по умолчанию 2160/1080/720
