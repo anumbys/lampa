@@ -33,7 +33,6 @@ window.lampainit_invc.appload = function appload() {
 // Удалить все плагины которые установлены в памяти устройства. Применять только когда лампа и плагин на одном сервере
 // Lampa.Storage.set('plugins', '["https://bylampa.github.io/tmdb-proxy.js"]')
 // Добовляем плагины, но без возможности отключить (в плагинах отображаться не будет)
-Lampa.Utils.putScriptAsync([], function() {});
 
     // Добовляем плагины по умолчанию, чтобы руками не вписывать.
 var plugins = Lampa.Plugins.get();
