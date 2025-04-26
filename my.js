@@ -49,7 +49,6 @@ var plugins_add = [
 {"url": "https://bylampa.github.io/source.js","status": 1},
 {"url": "https://bylampa.github.io/backmenu.js","status": 1},
 {"url": "https://bylampa.github.io/seas_and_eps.js","status": 1},
-{"url": "https://aviamovie.github.io/surs.js","status": 1},
 {"url": "https://levende.github.io/lampa-plugins/custom-favs.js","status": 1},
 {"url": "https://levende.github.io/lampa-plugins/lampac-src-filter.js","status": 1},
 {"url": "https://apxubatop.github.io/lmpPlugs/tvbutton.js","status": 1}
