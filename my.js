@@ -84,6 +84,7 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
 Lampa.Storage.set('start_page', 'last');  // Стартовая страница
 Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
 Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
+// Skrypt error
 //Lampa.Storage.set('torrents_sort', 'size');
 
 //// Лампа полностью загружена, можно работать с интерфейсом
@@ -134,7 +135,7 @@ var styleElement = document.createElement('style');
 
 // Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
     Lampa.Settings.listener.follow('open', function(e) {
-      $(['account', 'parser', 'iptv', 'tmdb', 'parental_control'].map(function(c) {
+      $(['account', 'iptv', 'tmdb', 'parental_control'].map(function(c) {
         return '[data-component="' + c + '"]';
       }).join(','), e.body).remove();
     });
