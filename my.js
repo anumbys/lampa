@@ -33,6 +33,7 @@ window.lampainit_invc.appload = function appload() {
 // Удалить все плагины которые установлены в памяти устройства. Применять только когда лампа и плагин на одном сервере
 // Lampa.Storage.set('plugins', '["https://bylampa.github.io/tmdb-proxy.js"]')
 // Добовляем плагины, но без возможности отключить (в плагинах отображаться не будет)
+Lampa.Utils.putScriptAsync([], function() {});
 
     // Добовляем плагины по умолчанию, чтобы руками не вписывать.
 var plugins = Lampa.Plugins.get();
@@ -43,18 +44,7 @@ var plugins_add = [
 {"url": "https://anumbys.github.io/lampa/profiles.js","status": 0,"name": "Профили","author": "lampac"},
 {"url": "https://kartmansms.github.io/lampa/Shikimori/Shikimori.js","status": 0,"name": "LME Shikimori Mod","author": "lampac"},
 {"url": "https://lampame.github.io/main/MovieEnhancer/MovieEnhancer.js","status": 0,"name": "Доп. инфо в карточке","author": "lampac"},
-{"url": "https://lampame.github.io/main/nc/nc.js","status": 0,"name": "Дополнительные категории","author": "lampac"},
-{"url": "https://cub.red/plugin/tracks","status": 1},
-{"url": "https://bylampa.github.io/account.js","status": 1},
-{"url": "https://bylampa.github.io/source.js","status": 1},
-{"url": "https://bylampa.github.io/backmenu.js","status": 1},
-{"url": "https://bylampa.github.io/seas_and_eps.js","status": 1},
-{"url": "https://aviamovie.github.io/surs.js","status": 1},
-{"url": "https://levende.github.io/lampa-plugins/custom-favs.js","status": 1},
-{"url": "https://levende.github.io/lampa-plugins/lampac-src-filter.js","status": 1},
-{"url": "https://apxubatop.github.io/lmpPlugs/tvbutton.js","status": 1},
-{"url": "https://anumbys.github.io/lampa/notextend.js","status": 1},
-{"url": "https://BDVBurik.github.io/rezkacomment.js","status": 1}
+{"url": "https://lampame.github.io/main/nc/nc.js","status": 0,"name": "Дополнительные категории","author": "lampac"}
 //{"url": "https://lampame.github.io/main/pubtorr/pubtorr.js","status": 0,"name": "Публичные парсеры","author": "lampac"}
 ];
 
@@ -74,6 +64,27 @@ plugins_add.forEach(function (plugin) {
 if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, function () { }, function () { }, true);
     // Добовляем плагины по умолчанию, чтобы руками не вписывать. END
 
+// Jacket and Torrserver
+    Lampa.Storage.set('parser_use', 'true');
+    Lampa.Storage.set('jackett_url', 'https://jacred.xyz');
+//    Lampa.Storage.set('jackett_key', '1');
+    Lampa.Storage.set('parser_torrent_type', 'jackett');
+    Lampa.Storage.set('parse_in_search', 'true');
+//    Lampa.Storage.set('torrserver_url',''),
+    Lampa.Storage.set('internal_torrclient', 'true'); // включенный встроенный клиент торсервера
+
+//    Lampa.Storage.set('surs_disableCustomName', true);
+    Lampa.Storage.set('surs_name', 'MIX'); // Название источника AVIAMOVIE
+    Lampa.Storage.set('source', 'MIX');    //    Источник по умолчанию
+// Постояные настроики, после изминений и перезагрузке настроики перключаются обратно на эти первоначалные
+//   "function start() {}" не работает
+    Lampa.Storage.set('lampac_initiale', 'true');
+      Lampa.Storage.set('animation', 'false');               // Анимация отключена
+      Lampa.Storage.set('protocol', 'http');                 // cub api протокол http/https
+Lampa.Storage.set('start_page', 'last');  // Стартовая страница
+Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
+Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
+Lampa.Storage.set('torrents_sort', 'size');
 
 //// Лампа полностью загружена, можно работать с интерфейсом
 //    Lampa.Storage.set('video_quality_default', '2160');    // Настройки, плеер, качество видео по умолчанию 2160/1080/720
