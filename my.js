@@ -33,7 +33,7 @@ window.lampainit_invc.appload = function appload() {
 // Удалить все плагины которые установлены в памяти устройства. Применять только когда лампа и плагин на одном сервере
 // Lampa.Storage.set('plugins', '["https://bylampa.github.io/tmdb-proxy.js"]')
 // Добовляем плагины, но без возможности отключить (в плагинах отображаться не будет)
-Lampa.Utils.putScriptAsync([], function() {});
+Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks","https://bylampa.github.io/account.js","https://bylampa.github.io/source.js","https://bylampa.github.io/backmenu.js","https://bylampa.github.io/seas_and_eps.js","https://aviamovie.github.io/surs.js","https://levende.github.io/lampa-plugins/custom-favs.js","https://levende.github.io/lampa-plugins/lampac-src-filter.js","https://apxubatop.github.io/lmpPlugs/tvbutton.js","https://anumbys.github.io/lampa/notextend.js","https://BDVBurik.github.io/rezkacomment.js"], function() {});
 
     // Добовляем плагины по умолчанию, чтобы руками не вписывать.
 var plugins = Lampa.Plugins.get();
@@ -44,14 +44,7 @@ var plugins_add = [
 {"url": "https://anumbys.github.io/lampa/profiles.js","status": 0,"name": "Профили","author": "lampac"},
 {"url": "https://kartmansms.github.io/lampa/Shikimori/Shikimori.js","status": 0,"name": "LME Shikimori Mod","author": "lampac"},
 {"url": "https://lampame.github.io/main/MovieEnhancer/MovieEnhancer.js","status": 0,"name": "Доп. инфо в карточке","author": "lampac"},
-{"url": "https://lampame.github.io/main/nc/nc.js","status": 0,"name": "Дополнительные категории","author": "lampac"},
-{"url": "https://bylampa.github.io/account.js","status": 1},
-{"url": "https://bylampa.github.io/source.js","status": 1},
-{"url": "https://bylampa.github.io/backmenu.js","status": 1},
-{"url": "https://bylampa.github.io/seas_and_eps.js","status": 1},
-{"url": "https://levende.github.io/lampa-plugins/custom-favs.js","status": 1},
-{"url": "https://levende.github.io/lampa-plugins/lampac-src-filter.js","status": 1},
-{"url": "https://apxubatop.github.io/lmpPlugs/tvbutton.js","status": 1}
+{"url": "https://lampame.github.io/main/nc/nc.js","status": 0,"name": "Дополнительные категории","author": "lampac"}
 //{"url": "https://lampame.github.io/main/pubtorr/pubtorr.js","status": 0,"name": "Публичные парсеры","author": "lampac"}
 ];
 
@@ -80,9 +73,6 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
 //    Lampa.Storage.set('torrserver_url',''),
     Lampa.Storage.set('internal_torrclient', 'true'); // включенный встроенный клиент торсервера
 
-//    Lampa.Storage.set('surs_disableCustomName', true);
-    Lampa.Storage.set('surs_name', 'MIX'); // Название источника AVIAMOVIE
-    Lampa.Storage.set('source', 'MIX');    //    Источник по умолчанию
 // Постояные настроики, после изминений и перезагрузке настроики перключаются обратно на эти первоначалные
 //   "function start() {}" не работает
     Lampa.Storage.set('lampac_initiale', 'true');
