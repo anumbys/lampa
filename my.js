@@ -93,9 +93,9 @@ Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
 }
 
 // Выполняется один раз, когда пользователь впервые открывает лампу
-window.lampainit_invc.first_initiale = function firstinitiale() {
+//window.lampainit_invc.first_initiale = function firstinitiale() {
 //   Lampa.Storage.set('source', 'MIX');
-}
+//}
 
     // Скрыть разделы в меню
     Lampa.Listener.follow('app', function(e) {
@@ -174,10 +174,10 @@ var styleElement = document.createElement('style');
   }, 200);
 // Удаляю компоненты END
 
-function start() {
+//function start() {
 
 //    if (window.lampainit_invc)
 //      window.lampainit_invc.first_initiale();
-}
+//}
 
 })();
