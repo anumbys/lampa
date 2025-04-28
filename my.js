@@ -28,6 +28,9 @@
   }
 
 
+window.lampainit_invc = {};
+
+window.lampainit_invc.appload = function appload() {
 // Удалить все плагины которые установлены в памяти устройства. Применять только когда лампа и плагин на одном сервере
 // Scrypt error
 // Lampa.Storage.set('plugins', '["https://bylampa.github.io/tmdb-proxy.js"]')
@@ -89,7 +92,7 @@ Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
 //// Лампа полностью загружена, можно работать с интерфейсом
 //    Lampa.Storage.set('video_quality_default', '2160');    // Настройки, плеер, качество видео по умолчанию 2160/1080/720
     Lampa.Storage.set('poster_size', 'w500');
-
+}
 
 // Выполняется один раз, когда пользователь впервые открывает лампу
 //window.lampainit_invc.first_initiale = function firstinitiale() {
