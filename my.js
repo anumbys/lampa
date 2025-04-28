@@ -89,6 +89,7 @@ Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
 
 //// Лампа полностью загружена, можно работать с интерфейсом
 //    Lampa.Storage.set('video_quality_default', '2160');    // Настройки, плеер, качество видео по умолчанию 2160/1080/720
+    Lampa.Storage.set('poster_size', 'w500');
 }
 
 // Выполняется один раз, когда пользователь впервые открывает лампу
@@ -115,63 +116,6 @@ var styleElement = document.createElement('style');
     document.body.appendChild(styleElement);
 
 
-// Удаляю компоненты
-  var timer = setInterval(function() {
-    if (typeof Lampa !== 'undefined') {
-      clearInterval(timer);
-
-      if (window.lampainit_invc)
-        window.lampainit_invc.appload();
-
-      if (false)
-        Lampa.Storage.set('full_btn_priority', '966825172');
-
-      var unic_id = Lampa.Storage.get('lampac_unic_id', '');
-      if (!unic_id) {
-        unic_id = Lampa.Utils.uid(8).toLowerCase();
-        Lampa.Storage.set('lampac_unic_id', unic_id);
-      }
-
-// Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
-    Lampa.Settings.listener.follow('open', function(e) {
-      $(['account', 'parser', 'iptv', 'tmdb', 'parental_control'].map(function(c) {
-        return '[data-component="' + c + '"]';
-      }).join(','), e.body).remove();
-    });
-
-    Lampa.Settings.listener.follow('open', function (e) {
-
-      if (e.name == 'interface') {
-        e.body.find('[data-name="light_version"]').remove();
-//        e.body.find('[data-name="card_interfice_type"]').remove();  // CUB
-//        e.body.find('[data-name="card_interfice_reactions"]').remove();  // CUB
-      }
-
-      if (e.name == 'more') {
-        e.body.find('[data-name="cache_images"]').remove();
-        e.body.find('[data-name="device_name"]').remove();
-        e.body.find('[data-name="export"]').remove();
-      }
-    });
-
-      if (!Lampa.Storage.get('lampac_initiale', 'false')) {
-        if (window.appready) {
-          if (window.lampainit_invc) window.lampainit_invc.appready();
-          start();
-        }
-        else {
-          Lampa.Listener.follow('app', function(e) {
-            if (e.type == 'ready') {
-              if (window.lampainit_invc) window.lampainit_invc.appready();
-              start();
-            }
-          })
-        }
-      }
-
-    }
-  }, 200);
-// Удаляю компоненты END
 
 //function start() {
 
