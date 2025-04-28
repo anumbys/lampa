@@ -138,22 +138,7 @@ var styleElement = document.createElement('style');
       $(['account', 'parser', 'iptv', 'tmdb', 'parental_control'].map(function(c) {
         return '[data-component="' + c + '"]';
       }).join(','), e.body).remove();
-
-
-
-      if (e.name == 'interface') {
-        e.body.find('[data-name="light_version"]').remove();
-//        e.body.find('[data-name="card_interfice_type"]').remove();  // CUB
-//        e.body.find('[data-name="card_interfice_reactions"]').remove();  // CUB
-      }
-
-      if (e.name == 'more') {
-        e.body.find('[data-name="cache_images"]').remove();
-        e.body.find('[data-name="device_name"]').remove();
-        e.body.find('[data-name="export"]').remove();
-      }
     });
-
       if (!Lampa.Storage.get('lampac_initiale', 'false')) {
         if (window.appready) {
           if (window.lampainit_invc) window.lampainit_invc.appready();
