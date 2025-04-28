@@ -105,7 +105,7 @@ var styleElement = document.createElement('style');
     document.body.appendChild(styleElement);
 
 
-Lampa.Storage.set('plugins', '["https://bylampa.github.io/tmdb-proxy.js"]')
+// Lampa.Storage.set('plugins', '["https://bylampa.github.io/tmdb-proxy.js"]')
 // Добовляем плагины, но без возможности отключить (в плагинах отображаться не будет)
 Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks","https://bylampa.github.io/account.js","https://bylampa.github.io/source.js","https://bylampa.github.io/backmenu.js","https://bylampa.github.io/seas_and_eps.js","https://aviamovie.github.io/surs.js","https://levende.github.io/lampa-plugins/custom-favs.js","https://levende.github.io/lampa-plugins/lampac-src-filter.js","https://apxubatop.github.io/lmpPlugs/tvbutton.js","https://anumbys.github.io/lampa/notextend.js","https://BDVBurik.github.io/rezkacomment.js"]);
 
