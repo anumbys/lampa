@@ -136,43 +136,7 @@ var styleElement = document.createElement('style');
     document.body.appendChild(styleElement);
 
 
-// Удаляю компоненты
-  var timer = setInterval(function() {
-    if (typeof Lampa !== 'undefined') {
-      clearInterval(timer);
 
-      if (window.lampainit_invc)
-        window.lampainit_invc.appload();
-
-      if (false)
-        Lampa.Storage.set('full_btn_priority', '966825172');
-
-      var unic_id = Lampa.Storage.get('lampac_unic_id', '');
-      if (!unic_id) {
-        unic_id = Lampa.Utils.uid(8).toLowerCase();
-        Lampa.Storage.set('lampac_unic_id', unic_id);
-      }
-
-
-
-      if (!Lampa.Storage.get('lampac_initiale', 'false')) {
-        if (window.appready) {
-          if (window.lampainit_invc) window.lampainit_invc.appready();
-          start();
-        }
-        else {
-          Lampa.Listener.follow('app', function(e) {
-            if (e.type == 'ready') {
-              if (window.lampainit_invc) window.lampainit_invc.appready();
-              start();
-            }
-          })
-        }
-      }
-
-    }
-  }, 200);
-// Удаляю компоненты END
 
 //function start() {
 
