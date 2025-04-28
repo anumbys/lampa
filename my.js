@@ -133,12 +133,9 @@ var styleElement = document.createElement('style');
         Lampa.Storage.set('lampac_unic_id', unic_id);
       }
 
-// Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
-    Lampa.Settings.listener.follow('open', function(e) {
-      $(['account', 'parser', 'iptv', 'tmdb', 'parental_control'].map(function(c) {
-        return '[data-component="' + c + '"]';
-      }).join(','), e.body).remove();
+
     });
+
       if (!Lampa.Storage.get('lampac_initiale', 'false')) {
         if (window.appready) {
           if (window.lampainit_invc) window.lampainit_invc.appready();
