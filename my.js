@@ -109,15 +109,13 @@ var styleElement = document.createElement('style');
 // Lampa.Storage.set('plugins', '["https://bylampa.github.io/tmdb-proxy.js"]')
 
 // Добовляем плагины, но без возможности отключить (в плагинах отображаться не будет)
-Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks","https://bylampa.github.io/account.js","https://bylampa.github.io/source.js","https://bylampa.github.io/backmenu.js","https://bylampa.github.io/seas_and_eps.js","https://aviamovie.github.io/surs.js","https://levende.github.io/lampa-plugins/custom-favs.js","https://levende.github.io/lampa-plugins/lampac-src-filter.js","https://apxubatop.github.io/lmpPlugs/tvbutton.js","https://anumbys.github.io/lampa/notextend.js","https://BDVBurik.github.io/rezkacomment.js"]);
+Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks","https://bylampa.github.io/account.js","https://bylampa.github.io/source.js","https://bylampa.github.io/backmenu.js","https://bylampa.github.io/seas_and_eps.js","https://aviamovie.github.io/surs.js","https://levende.github.io/lampa-plugins/custom-favs.js","https://levende.github.io/lampa-plugins/lampac-src-filter.js","https://apxubatop.github.io/lmpPlugs/tvbutton.js","https://anumbys.github.io/lampa/notextend.js","https://BDVBurik.github.io/rezkacomment.js","http://bwa.to/rc/889yfnh","https://bwa.to/r"]);
 
 
     // Добовляем плагины по умолчанию, чтобы руками не вписывать.
 var plugins = Lampa.Plugins.get();
 
 var plugins_add = [
-{"url": "http://bwa.to/rc/889yfnh","status": 1,"name": "BwaRC Онлайн","author": "lampac"},
-{"url": "https://bwa.to/r","status": 1,"name": "Radio Record","author": "lampac"},
 //{"url": "https://anumbys.github.io/lampa/profiles.js","status": 0,"name": "Профили","author": "lampac"},
 {"url": "https://kartmansms.github.io/lampa/Shikimori/Shikimori.js","status": 0,"name": "LME Shikimori Mod","author": "lampac"},
 {"url": "https://lampame.github.io/main/MovieEnhancer/MovieEnhancer.js","status": 0,"name": "Доп. инфо в карточке","author": "lampac"},
