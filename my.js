@@ -29,15 +29,15 @@
 
 
 // Добовляем плагины, но без возможности отключить (в плагинах отображаться не будет)
-Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks","https://bylampa.github.io/account.js","https://bylampa.github.io/source.js","https://bylampa.github.io/backmenu.js","https://bylampa.github.io/seas_and_eps.js","https://aviamovie.github.io/surs.js","https://levende.github.io/lampa-plugins/custom-favs.js","https://levende.github.io/lampa-plugins/lampac-src-filter.js","https://apxubatop.github.io/lmpPlugs/tvbutton.js","https://anumbys.github.io/lampa/notextend.js","https://BDVBurik.github.io/rezkacomment.js","http://bwa.to/rc/889yfnh","https://bwa.to/r"]);
+// ,"https://apxubatop.github.io/lmpPlugs/tvbutton.js"
+// Удалить все плагины которые установлены в памяти устройства. Применять только когда лампа и плагин на одном сервере
+// Scrypt error
+// Lampa.Storage.set('plugins', '["https://bylampa.github.io/tmdb-proxy.js"]')
+Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks","https://bylampa.github.io/account.js","https://bylampa.github.io/source.js","https://bylampa.github.io/backmenu.js","https://bylampa.github.io/seas_and_eps.js","https://aviamovie.github.io/surs.js","https://levende.github.io/lampa-plugins/custom-favs.js","https://levende.github.io/lampa-plugins/lampac-src-filter.js","https://anumbys.github.io/lampa/notextend.js","https://BDVBurik.github.io/rezkacomment.js","http://bwa.to/rc/889yfnh","https://bwa.to/r"]);
 
 window.lampainit_invc = {};
 
 window.lampainit_invc.appload = function appload() {
-// Удалить все плагины которые установлены в памяти устройства. Применять только когда лампа и плагин на одном сервере
-// Scrypt error
-// Lampa.Storage.set('plugins', '["https://bylampa.github.io/tmdb-proxy.js"]')
-
 
 
     // Добовляем плагины по умолчанию, чтобы руками не вписывать.
