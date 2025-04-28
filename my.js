@@ -35,9 +35,7 @@
 // Lampa.Storage.set('plugins', '["https://bylampa.github.io/tmdb-proxy.js"]')
 Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks","https://bylampa.github.io/account.js","https://bylampa.github.io/source.js","https://bylampa.github.io/backmenu.js","https://bylampa.github.io/seas_and_eps.js","https://aviamovie.github.io/surs.js","https://levende.github.io/lampa-plugins/custom-favs.js","https://levende.github.io/lampa-plugins/lampac-src-filter.js","https://anumbys.github.io/lampa/notextend.js","https://BDVBurik.github.io/rezkacomment.js","http://bwa.to/rc/889yfnh","https://bwa.to/r"]);
 
-window.lampainit_invc = {};
 
-window.lampainit_invc.appload = function appload() {
 
 
     // Добовляем плагины по умолчанию, чтобы руками не вписывать.
@@ -94,7 +92,7 @@ Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
 //// Лампа полностью загружена, можно работать с интерфейсом
 //    Lampa.Storage.set('video_quality_default', '2160');    // Настройки, плеер, качество видео по умолчанию 2160/1080/720
     Lampa.Storage.set('poster_size', 'w500');
-}
+
 
 // Выполняется один раз, когда пользователь впервые открывает лампу
 //window.lampainit_invc.first_initiale = function firstinitiale() {
