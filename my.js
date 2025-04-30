@@ -141,9 +141,25 @@ var styleElement = document.createElement('style');
     styleElement.innerHTML = '.head .notice--icon { display: none; }';
     document.body.appendChild(styleElement);
 
+  var timer = setInterval(function() {
+    if (typeof Lampa !== 'undefined') {
+      clearInterval(timer);
+
+      if (window.lampainit_invc)
+        window.lampainit_invc.appload();
+
+      if (false)
+        Lampa.Storage.set('full_btn_priority', '966825172');
+
+      var unic_id = Lampa.Storage.get('lampac_unic_id', '');
+      if (!unic_id) {
+        unic_id = Lampa.Utils.uid(8).toLowerCase();
+        Lampa.Storage.set('lampac_unic_id', unic_id);
+      }
 
 
-
+    }
+  }, 200);
 //function start() {
 
 //    if (window.lampainit_invc)
