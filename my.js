@@ -84,12 +84,12 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
 //   "function start() {}" не работает
     Lampa.Storage.set('lampac_initiale', 'true');
       Lampa.Storage.set('animation', 'false');               // Анимация отключена
-      Lampa.Storage.set('protocol', 'http');                 // cub api протокол http/https
+      Lampa.Storage.set('protocol', 'https');                 // cub api протокол http/https
 Lampa.Storage.set('start_page', 'last');  // Стартовая страница
 Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
 Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
 // Skrypt error
-Lampa.Storage.set('torrents_sort', 'size');
+//Lampa.Storage.set('torrents_sort', 'size');
 
 //// Лампа полностью загружена, можно работать с интерфейсом
 //    Lampa.Storage.set('video_quality_default', '2160');    // Настройки, плеер, качество видео по умолчанию 2160/1080/720
