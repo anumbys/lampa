@@ -29,6 +29,7 @@
 
 window.lampainit_invc = {};
 
+// Лампа готова для использования
 window.lampainit_invc.appload = function appload() {
 // Добовляем плагины, но без возможности отключить (в плагинах отображаться не будет)
 // ,"https://apxubatop.github.io/lmpPlugs/tvbutton.js"
@@ -37,10 +38,8 @@ window.lampainit_invc.appload = function appload() {
 // Lampa.Storage.set('plugins', '["https://bylampa.github.io/tmdb-proxy.js"]')
 Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks","https://bylampa.github.io/account.js","https://bylampa.github.io/source.js","https://bylampa.github.io/backmenu.js","https://bylampa.github.io/seas_and_eps.js","https://aviamovie.github.io/surs.js","https://levende.github.io/lampa-plugins/custom-favs.js","https://levende.github.io/lampa-plugins/lampac-src-filter.js","https://BDVBurik.github.io/rezkacomment.js","http://bwa.to/rc/889yfnh","https://bwa.to/r","https://anumbys.github.io/lampa/notextend.js"]);
 
-
-
-
-    // Добовляем плагины по умолчанию, чтобы руками не вписывать.
+// Постояные настроики, после изминений и перезагрузке настроики перключаются обратно на эти первоначалные
+// Добовляем плагины по умолчанию, чтобы руками не вписывать.
 var plugins = Lampa.Plugins.get();
 
 var plugins_add = [
@@ -78,28 +77,22 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
     Lampa.Storage.set('internal_torrclient', 'true'); // включенный встроенный клиент торсервера
 
 //    Lampa.Storage.set('surs_disableCustomName', true);
-    Lampa.Storage.set('surs_name', 'MIX'); // Название источника AVIAMOVIE
-    Lampa.Storage.set('source', 'MIX');    //    Источник по умолчанию
-// Постояные настроики, после изминений и перезагрузке настроики перключаются обратно на эти первоначалные
-//   "function start() {}" не работает
-    Lampa.Storage.set('lampac_initiale', 'true');
-      Lampa.Storage.set('animation', 'false');               // Анимация отключена
-      Lampa.Storage.set('protocol', 'https');                 // cub api протокол http/https
+Lampa.Storage.set('surs_name', 'MIX'); // Название источника AVIAMOVIE
+Lampa.Storage.set('source', 'MIX');    //    Источник по умолчанию
+Lampa.Storage.set('lampac_initiale', 'true');
+Lampa.Storage.set('animation', 'false');               // Анимация отключена
+Lampa.Storage.set('protocol', 'https');                 // cub api протокол http/https
 Lampa.Storage.set('start_page', 'last');  // Стартовая страница
 Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
 Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
 // Skrypt error
 //Lampa.Storage.set('torrents_sort', 'size');
 
-//// Лампа полностью загружена, можно работать с интерфейсом
 //    Lampa.Storage.set('video_quality_default', '2160');    // Настройки, плеер, качество видео по умолчанию 2160/1080/720
-    Lampa.Storage.set('poster_size', 'w500');
-}
+Lampa.Storage.set('poster_size', 'w500');
 
-// Выполняется один раз, когда пользователь впервые открывает лампу
-//window.lampainit_invc.first_initiale = function firstinitiale() {
-//   Lampa.Storage.set('source', 'MIX');
-//}
+// Постояные настроики END
+}
 
 // Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
     Lampa.Settings.listener.follow('open', function(e) {
@@ -160,6 +153,8 @@ var styleElement = document.createElement('style');
 
     }
   }, 200);
+
+// не работает
 //function start() {
 
 //    if (window.lampainit_invc)
