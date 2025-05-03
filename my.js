@@ -69,7 +69,7 @@ if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, fu
 
 // Jacket and Torrserver
     Lampa.Storage.set('parser_use', 'true');
-    Lampa.Storage.set('jackett_url', 'https://jacred.xyz');
+    Lampa.Storage.set('jackett_url', 'jacred.xyz');
 //    Lampa.Storage.set('jackett_key', '1');
     Lampa.Storage.set('parser_torrent_type', 'jackett');
     Lampa.Storage.set('parse_in_search', 'true');
@@ -81,7 +81,7 @@ Lampa.Storage.set('surs_name', 'MIX'); // Название источника AV
 Lampa.Storage.set('source', 'MIX');    //    Источник по умолчанию
 Lampa.Storage.set('lampac_initiale', 'true');
 Lampa.Storage.set('animation', 'false');               // Анимация отключена
-Lampa.Storage.set('protocol', 'https');                 // cub api протокол http/https
+Lampa.Storage.set('protocol', 'http');                 // cub api протокол http/https
 Lampa.Storage.set('start_page', 'last');  // Стартовая страница
 Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
 Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
