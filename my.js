@@ -32,7 +32,6 @@ window.lampainit_invc = {};
 window.lampainit_invc.appload = function appload() {
 // Добовляем плагины, но без возможности отключить (в плагинах отображаться не будет)
 // ,"https://apxubatop.github.io/lmpPlugs/tvbutton.js"
-// ,"https://anumbys.github.io/lampa/notextend.js"
 // Удалить все плагины которые установлены в памяти устройства. Применять только когда лампа и плагин на одном сервере
 // Scrypt error
 // Lampa.Storage.set('plugins', '["https://bylampa.github.io/tmdb-proxy.js"]')
@@ -45,12 +44,11 @@ Lampa.Utils.putScriptAsync(["https://cub.red/plugin/tracks","https://bylampa.git
 var plugins = Lampa.Plugins.get();
 
 var plugins_add = [
-//{"url": "https://anumbys.github.io/lampa/profiles.js","status": 0,"name": "Профили","author": "lampac"},
-//{"url": "https://apxubatop.github.io/lmpPlugs/tvbutton.js","status": 1,"name": "tvbutton","author": "lampac"},
-//{"url": "https://anumbys.github.io/lampa/notextend.js","status": 1,"name": "No Text End","author": "lampac"},
 {"url": "https://kartmansms.github.io/lampa/Shikimori/Shikimori.js","status": 0,"name": "LME Shikimori Mod","author": "lampac"},
 {"url": "https://lampame.github.io/main/MovieEnhancer/MovieEnhancer.js","status": 0,"name": "Доп. инфо в карточке","author": "lampac"},
 {"url": "https://lampame.github.io/main/nc/nc.js","status": 0,"name": "Дополнительные категории","author": "lampac"}
+//{"url": "https://anumbys.github.io/lampa/profiles.js","status": 0,"name": "Профили","author": "lampac"},
+//{"url": "https://apxubatop.github.io/lmpPlugs/tvbutton.js","status": 1,"name": "tvbutton","author": "lampac"},
 //{"url": "https://lampame.github.io/main/pubtorr/pubtorr.js","status": 0,"name": "Публичные парсеры","author": "lampac"}
 ];
 
@@ -91,7 +89,7 @@ Lampa.Storage.set('start_page', 'last');  // Стартовая страница
 Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
 Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
 // Skrypt error
-//Lampa.Storage.set('torrents_sort', 'size');
+Lampa.Storage.set('torrents_sort', 'size');
 
 //// Лампа полностью загружена, можно работать с интерфейсом
 //    Lampa.Storage.set('video_quality_default', '2160');    // Настройки, плеер, качество видео по умолчанию 2160/1080/720
