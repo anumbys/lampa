@@ -41,67 +41,7 @@ plugins_add.forEach(function (plugin) {
 if (plugins_push.length) Lampa.Utils.putScript(plugins_push, function () { }, function () { }, function () { }, true);
     // Добовляем плагины по умолчанию, чтобы руками не вписывать. END
 
-// Jacket and Torrserver
-    Lampa.Storage.set('parser_use', 'true');
-    Lampa.Storage.set('jackett_url', 'https://jacred.xyz');
-//    Lampa.Storage.set('jackett_key', '1');
-    Lampa.Storage.set('parser_torrent_type', 'jackett');
-    Lampa.Storage.set('parse_in_search', 'true');
-//    Lampa.Storage.set('torrserver_url',''),
-    Lampa.Storage.set('internal_torrclient', 'true'); // включенный встроенный клиент торсервера
 
-//    Lampa.Storage.set('surs_disableCustomName', true);
-    Lampa.Storage.set('surs_name', 'MIX'); // Название источника AVIAMOVIE
-    Lampa.Storage.set('source', 'MIX');    //    Источник по умолчанию
-// Постояные настроики, после изминений и перезагрузке настроики перключаются обратно на эти первоначалные
-//   "function start() {}" не работает
-    Lampa.Storage.set('lampac_initiale', 'true');
-      Lampa.Storage.set('animation', 'false');               // Анимация отключена
-      Lampa.Storage.set('protocol', 'http');                 // cub api протокол http/https
-Lampa.Storage.set('start_page', 'last');  // Стартовая страница
-Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
-Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
-// Skrypt error
-//Lampa.Storage.set('torrents_sort', 'size');
-
-//// Лампа полностью загружена, можно работать с интерфейсом
-//    Lampa.Storage.set('video_quality_default', '2160');    // Настройки, плеер, качество видео по умолчанию 2160/1080/720
-    Lampa.Storage.set('poster_size', 'w500');
-
-
-// Выполняется один раз, когда пользователь впервые открывает лампу
-//window.lampainit_invc.first_initiale = function firstinitiale() {
-//   Lampa.Storage.set('source', 'MIX');
-//}
-
-// Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
-    Lampa.Settings.listener.follow('open', function(e) {
-      $(['parser', 'iptv', 'tmdb', 'parental_control'].map(function(c) {
-        return '[data-component="' + c + '"]';
-      }).join(','), e.body).remove();
-    });
-
-    Lampa.Settings.listener.follow('open', function (e) {
-
-      if (e.name == 'interface') {
-        e.body.find('[data-name="light_version"]').remove();
-//        e.body.find('[data-name="card_interfice_type"]').remove();  // CUB
-//        e.body.find('[data-name="card_interfice_reactions"]').remove();  // CUB
-      }
-
-      if (e.name == 'more') {
-        e.body.find('[data-name="cache_images"]').remove();
-        e.body.find('[data-name="device_name"]').remove();
-        e.body.find('[data-name="export"]').remove();
-      }
-    });
-
-
-
-// убрать с интерфейса колокольчик и звёздочку
-var styleElement = document.createElement('style');
-    styleElement.innerHTML = '.head .notice--icon { display: none; }';
-    document.body.appendChild(styleElement);
 
 
 
