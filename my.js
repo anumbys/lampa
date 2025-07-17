@@ -5,9 +5,9 @@
     torrents_use: true,    // кнопка торренты включена
     demo: false,           // demo off
     read_only: false,      // demo off
-    socket_use: false,     // cub
+    socket_use: true,     // cub
     account_use: true,     // сохраним ради расширенных закладок
-    account_sync: true,   // cub синхронизация
+    account_sync: false,   // cub синхронизация
     plugins_store: false,  // cub магазин
     feed: false,           // cub лента
     white_use: false,      // cub
