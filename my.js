@@ -10,7 +10,7 @@
     account_sync: false,   // cub синхронизация
     plugins_store: false,  // cub магазин
     feed: false,           // cub лента
-    white_use: false,      // cub
+    white_use: true,      // cub
     push_state: false,     // адрес в url /?card=1241982&media=movie
     lang_use: false,        // выбор языка в настройках
     plugins_use: true      // настройки, расширения
