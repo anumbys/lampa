@@ -1,31 +1,6 @@
 (function() {
   'use strict';
 
-  window.lampa_settings = {
-    torrents_use: true,    // кнопка торренты включена
-    demo: false,           // demo off
-    read_only: false,      // demo off
-    socket_use: true,     // cub
-    account_use: true,     // сохраним ради расширенных закладок
-    account_sync: false,   // cub синхронизация
-    plugins_store: false,  // cub магазин
-    feed: false,           // cub лента
-    white_use: true,      // cub
-    push_state: false,     // адрес в url /?card=1241982&media=movie
-    lang_use: false,        // выбор языка в настройках
-    plugins_use: true      // настройки, расширения
-  }
-
-  window.lampa_settings.disable_features = {
-    dmca: true,          // шлет нахер правообладателей - on
-    reactions: false,    // cub реакции - on
-    discuss: false,      // cub комментарии - on
-    ai: true,            // cub AI-поиск - off
-    install_proxy: true, // cub tmdb proxy - off
-    subscribe: true,     // cub подписки - off
-    blacklist: true,     // off
-    persons: true        // off
-  }
 
 
 // Добовляем плагины, но без возможности отключить (в плагинах отображаться не будет)
