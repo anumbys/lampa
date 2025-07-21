@@ -50,7 +50,7 @@ Lampa.Storage.set('source', 'MIX');    //    Источник по умолча�
 Lampa.Storage.set('lampac_initiale', 'true');
 Lampa.Storage.set('animation', 'false');               // Анимация отключена
 Lampa.Storage.set('protocol', 'http');                 // cub api протокол http/https
-Lampa.Storage.set('start_page', 'last');  // Стартовая страница
+// Lampa.Storage.set('start_page', 'last');  // Стартовая страница
 Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
 Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
 
