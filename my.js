@@ -1,36 +1,8 @@
 (function() {
   'use strict';
-
-  window.lampa_settings = {
-    torrents_use: true,    // кнопка торренты включена
-    demo: false,           // demo off
-    read_only: false,      // demo off
-    socket_use: false,     // cub
-    account_use: true,     // сохраним ради расширенных закладок
-    account_sync: false,   // cub синхронизация
-    plugins_store: false,  // cub магазин
-    feed: false,           // cub лента
-    white_use: false,      // cub
-    push_state: false,     // адрес в url /?card=1241982&media=movie
-    lang_use: false,        // выбор языка в настройках
-    plugins_use: true      // настройки, расширения
-  }
-
-  window.lampa_settings.disable_features = {
-    dmca: true,          // шлет нахер правообладателей - on
-    reactions: false,    // cub реакции - on
-    discuss: false,      // cub комментарии - on
-    ai: true,            // cub AI-поиск - off
-    install_proxy: true, // cub tmdb proxy - off
-    subscribe: true,     // cub подписки - off
-    blacklist: true,     // off
-    persons: true        // off
-  }
-
-
-// Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB  'tmdb',
+// Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
     Lampa.Settings.listener.follow('open', function(e) {
-      $(['account', 'parser', 'iptv', 'parental_control'].map(function(c) {
+      $(['account', 'parser', 'iptv', 'tmdb', 'parental_control'].map(function(c) {
         return '[data-component="' + c + '"]';
       }).join(','), e.body).remove();
     });
@@ -56,7 +28,6 @@
         $("[data-action=feed]").hide();        // лента
         $("[data-action=myperson]").hide();    // cub подписка на актеров
         $("[data-action=subscribes]").hide();  // cub подписки
-//        $("[data-action=mytorrents]").hide();
         $("[data-action=about]").hide();
         $("[data-action=console]").hide();
         $("[data-action=timetable]").hide();
@@ -67,13 +38,5 @@
 var styleElement = document.createElement('style');
     styleElement.innerHTML = '.head .notice--icon { display: none; }';
     document.body.appendChild(styleElement);
-
-
-// не работает
-//function start() {
-
-//    if (window.lampainit_invc)
-//      window.lampainit_invc.first_initiale();
-//}
 
 })();
