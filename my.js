@@ -27,10 +27,6 @@
     persons: true        // off
   }
 
-window.lampainit_invc = {};
-
-// Лампа готова для использования
-
 
 // Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
     Lampa.Settings.listener.follow('open', function(e) {
