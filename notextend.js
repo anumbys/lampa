@@ -12,5 +12,4 @@ function _0x45eb(_0x232fbb,_0x37ee12){var _0x79b58d=_0x79b5();return _0x45eb=fun
 			if (e.type == 'ready') start();
 		})
     }
-
-})()
+})();
