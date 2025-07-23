@@ -14,6 +14,6 @@
   Lampa.Storage.set('menu_sort', ([ "Главная", "Избранное", "История","Торренты", "Фильмы", "Аниме", "Сериалы", "Радио"]));  // Cортировка меню
   Lampa.Storage.set('menu_hide', ([ "Расписание", "Релизы"]));
 // Skrypt error
-  Lampa.Storage.set('torrents_sort', 'size');
+//  Lampa.Storage.set('torrents_sort', 'size');
   Lampa.Storage.set('poster_size', 'w500');
   })();
