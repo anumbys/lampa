@@ -29,7 +29,7 @@
 
 // Скрыть меню в настройках - Синхронизация, Парсер (, 'parser'), TorrServer (, 'server'), IPTV, Расширения, TMDB
     Lampa.Settings.listener.follow('open', function(e) {
-      $(['account', 'parser', 'iptv', 'tmdb', 'parental_control'].map(function(c) {
+      $(['account', 'iptv', 'tmdb', 'parental_control'].map(function(c) {
         return '[data-component="' + c + '"]';
       }).join(','), e.body).remove();
     });
